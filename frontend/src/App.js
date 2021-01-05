@@ -1,36 +1,40 @@
 import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
+import { Route, Switch } from "react-router-dom";
 import "./App.css";
+import Navigation from "./components/navigation/Navigation";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles } from "./components/themes/globalStyles";
+import { lightTheme, darkTheme } from "./components/themes/Themes";
+import { useDarkMode } from "./components/darkMode/useDarkMode";
+import Toggle from "./components/toggler/Toggler";
 
 const App = () => {
-  const [checked, setChecked] = useState(localStorage.getItem("theme") === "dark" ? true : false);
+  const [theme, themeToggler, mountedComponent] = useDarkMode();
 
-  useEffect(() => {
-    document.getElementsByTagName("HTML")[0].setAttribute("data-theme", localStorage.getItem("theme"));
-  }, [checked]);
+  const themeMode = theme === "light" ? lightTheme : darkTheme;
 
-  const toggleThemeChange = () => {
-    if (checked === false) {
-      localStorage.setItem("theme", "dark");
-
-      setChecked(true);
-    } else {
-      localStorage.setItem("theme", "light");
-
-      setChecked(false);
-    }
-  };
+  if (!mountedComponent) return <div />;
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Click the checkbox to toggle themes</p>
-        <label>
-          <input type="checkbox" defaultChecked={checked} onChange={() => toggleThemeChange()} />
-        </label>
-      </header>
-    </div>
+    <ThemeProvider theme={themeMode}>
+      <>
+        <GlobalStyles />
+        <div className="App">
+              
+          <Toggle theme={theme} toggleTheme={themeToggler} />
+          <Navigation />
+             
+          <Switch>
+            <Route exact path="/"></Route>
+              
+            <Route path="/dinosaur">                  </Route>
+            <Route path="/user"></Route>
+            <Route path="/library"></Route>
+            <Route path="/extractor"></Route>
+          </Switch>
+        </div>
+      </>
+    </ThemeProvider>
   );
 };
 

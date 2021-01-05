@@ -7,8 +7,8 @@ import bodyParser from "body-parser";
 const app = express()
 app.use(bodyParser.json())
 
-app.all("./dinos", dinoController)
-app.get("./dinos/:id", dinoController)
+app.all("./dinos")
+app.get("./dinos/:id")
 app.get("/", (req, res) => {
   res.send("Hello from my cool server");
 });
