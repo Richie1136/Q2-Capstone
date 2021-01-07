@@ -7,6 +7,7 @@ import { GlobalStyles } from "./components/themes/globalStyles";
 import { lightTheme, darkTheme } from "./components/themes/Themes";
 import { useDarkMode } from "./components/darkMode/useDarkMode";
 import Toggle from "./components/toggler/Toggler";
+import Input from "./components/input/Input";
 
 const App = () => {
   const [theme, themeToggler, mountedComponent] = useDarkMode();
@@ -31,6 +32,9 @@ const App = () => {
             <Route path="/user"></Route>
             <Route path="/library"></Route>
             <Route path="/extractor"></Route>
+            <Route path="/input">
+              <Input />
+            </Route>
           </Switch>
         </div>
       </>
@@ -39,3 +43,4 @@ const App = () => {
 };
 
 export default App;
+
