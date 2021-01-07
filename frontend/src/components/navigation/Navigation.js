@@ -20,11 +20,7 @@ function Navigation(props) {
       <div className="extractor-link">
         <Link to="/extractor">Extractor</Link>
       </div>
-      <div className="input-link">
-        <Link to="/link">Link</Link>
-      </div>
     </div>
   );
 }
 export default Navigation;
-

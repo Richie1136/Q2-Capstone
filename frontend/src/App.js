@@ -21,12 +21,13 @@ const App = () => {
       <>
         <GlobalStyles />
         <div className="App">
-
+              
           <Toggle theme={theme} toggleTheme={themeToggler} />
           <Navigation />
-
+             
           <Switch>
             <Route exact path="/"></Route>
+              
             <Route path="/dinosaur">                  </Route>
             <Route path="/user"></Route>
             <Route path="/library"></Route>
