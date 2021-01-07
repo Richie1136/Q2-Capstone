@@ -2,16 +2,33 @@ import express, { urlencoded } from "express";
 import cors from "cors";
 import "./utils";
 import bodyParser from "body-parser";
-import adaptRequest from "./helpers/adapt-request"
+import mongoose from 'mongoose';
+import cookieParser from 'cookie-parser'
+import 'dotenv/config'
+
 
 const app = express()
+const port = 4000
+app.use(coors())
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json())
+app.use(cookieParser());
 
-app.all("./dinos", dinoController)
-app.get("./dinos/:id", dinoController)
-app.get("/", (req, res) => {
-  res.send("Hello from my cool server");
+mongoose.connect(process.env.DB_CONNECTION, { useUnifiedTopology: true, useNewUrlParser: true }, () => {
+  console.log("connected to mongodb")
 });
+
+app.get("/", (req, res) => {
+  res.send("homepage");
+});
+
+app.get("/user", (req, res) => {
+  res.send("profile info page");
+});
+app.all("./dinos")
+app.get("./dinos/:id")
+
 app.get("/dinos", (req, res) => {
   res.status(200).json(dinosJSON)
 });
@@ -28,13 +45,15 @@ app.get("*", (req, res) => {
   });
 });
 
+
+
 app.listen(4000, () => {
   console.log("Express server is now running on port 4000")
 })
 
-function dinoController(req, res) => {
+// function dinoController(req, res) => {
 
-}
+// }
 
 
 
