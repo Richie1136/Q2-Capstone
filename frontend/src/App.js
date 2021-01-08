@@ -7,7 +7,7 @@ import { GlobalStyles } from "./components/globalStyles";
 import { lightTheme, darkTheme } from "./components/Themes";
 import { useDarkMode } from "./components/useDarkMode";
 import Toggle from "./components/Toggler";
-
+import Profile from '../src/screens/Profile'
 function App() {
   const auth = useAuth();
 
@@ -46,10 +46,10 @@ function App() {
               <button onClick={() => auth.logout()}>Logout</button>
             </div>
           ) : (
-            <div>
-              <button onClick={loginNow}>Login Now</button>
-            </div>
-          )}
+              <div>
+                <button onClick={loginNow}>Login Now</button>
+              </div>
+            )}
 
           <Navigation />
           <Links />
