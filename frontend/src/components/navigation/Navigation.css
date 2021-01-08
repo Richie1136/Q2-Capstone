@@ -1,0 +1,6 @@
+.links {
+  display: flex;
+  flex-flow: column;
+  padding: 5px;
+  align-items: initial;
+}

@@ -12,7 +12,7 @@ export default function Links(props) {
         <Link to="/user">Profile</Link>
       </div>
       <div className="dinosaur-link">
-        <Link to="/dinosaur">Dinosaur input</Link>
+        <Link to="/input">Dinosaurs</Link>
       </div>
       <div className="library-link">
         <Link to="/library">Library</Link>

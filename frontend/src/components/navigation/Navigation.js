@@ -15,7 +15,7 @@ export default function Navigation() {
       <ConnectedRoute exact path="/" redirectIfAuthenticated component={Home} />
       <ConnectedRoute exact isProtected path="/dashboard" component={Dashboard} />
       <ConnectedRoute path="/user" component={Profile} />
-      <ConnectedRoute path="/dinosaur" component={Input} />
+      <ConnectedRoute path="/input" component={Input} />
       <ConnectedRoute path="/library" component={Library} />
       <ConnectedRoute exact path="/extractor" component={Extractor} />
       <ConnectedRoute path="*" component={NotFound} />
