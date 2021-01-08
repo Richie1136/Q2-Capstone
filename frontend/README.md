@@ -7,7 +7,8 @@ This is a detailed description of your project.
 Once your project has been completed please fill out the links below. These are a part of the rubric and must be
 completed before the submission deadline
 
-**[Scrum Board URL](https://trello.com/b/015oLy7e/capstone)** | **[Deployment URL](https://heroku.com/)** |
+**[Scrum Board URL](https://trello.com/b/015oLy7e/capstone)** |
+**[Deployment URL](https://ark-stat-app.herokuapp.com/)** |
 **[Kapstone Pitch URL](https://docs.google.com/document/d/1e1xpWcforBMQGUE07bnr1eaKTRiNYJG5A58eBHs3Zwk/edit?usp=sharing)**|
 **[Group Retrospective Document URL](https://google.com/)** |
 **[Kapstone Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSeGbm0WcPzlEXHYkWDHcKmXr0fY3cF9sA1zGiP16sjd-0Jg5A/viewform)**
