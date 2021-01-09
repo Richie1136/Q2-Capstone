@@ -3,7 +3,7 @@ import CardDeck from "react-bootstrap/CardDeck";
 import Card from "react-bootstrap/Card";
 
 const Input = () => {
-  const [stats, setStats] = useState("");
+  // const [stats, setStats] = useState("");
   const [health, setHealth] = useState(0);
   const [stamina, setStamina] = useState(0);
   const [oxygen, setOxygen] = useState(0);
