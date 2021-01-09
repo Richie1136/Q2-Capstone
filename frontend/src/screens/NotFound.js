@@ -1,3 +1,11 @@
+import logo from "../assets/wyvern.gif";
+
 export default function NotFound() {
-  return <h1>Not what you are looking for......</h1>;
+  return (
+    <div>
+      <img src={logo} alt="You should leave" />
+      <br />
+      <h1>You Should Leave this place......</h1>
+    </div>
+  );
 }

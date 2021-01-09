@@ -20,6 +20,9 @@ export default function Links(props) {
       <div className="extractor-link">
         <Link to="/extractor">Extractor</Link>
       </div>
+      <div className="test">
+        <Link to="/test">test</Link>
+      </div>
     </div>
   );
 }
