@@ -7,7 +7,9 @@ import { GlobalStyles } from "./components/globalStyles";
 import { lightTheme, darkTheme } from "./components/Themes";
 import { useDarkMode } from "./components/useDarkMode";
 import Toggle from "./components/Toggler";
-import Profile from '../src/screens/Profile'
+import Profile from "../src/screens/Profile";
+import logo from "../src/assets/stegorock.gif";
+
 function App() {
   const auth = useAuth();
 
@@ -30,7 +32,7 @@ function App() {
 
   if (auth.loading || auth.loggingIn || auth.loggingOut) {
     // User is currently trying to log in or something..
-    return "Loading....... 😬";
+    return <img src={logo} alt="Loading......." />;
   }
 
   return (
@@ -46,10 +48,10 @@ function App() {
               <button onClick={() => auth.logout()}>Logout</button>
             </div>
           ) : (
-              <div>
-                <button onClick={loginNow}>Login Now</button>
-              </div>
-            )}
+            <div>
+              <button onClick={loginNow}>Login Now</button>
+            </div>
+          )}
 
           <Navigation />
           <Links />
