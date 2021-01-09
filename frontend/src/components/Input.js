@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import CardDeck from "react-bootstrap/CardDeck";
 import Card from "react-bootstrap/Card";
 import Links from "../components/navigation/Links";
 =======
 >>>>>>> 44fa149... added loading animation
+=======
+import CardDeck from "react-bootstrap/CardDeck";
+import Card from "react-bootstrap/Card";
+>>>>>>> 8c587da... fixed input.js file and added gif to sources.md
 
 const Input = () => {
   const [stats, setStats] = useState("");
@@ -156,6 +161,7 @@ const Input = () => {
 =======
 
   return (
+<<<<<<< HEAD
     <form onSubmit={handleSubmit}>
       <div className="ui form">
         <div className="field">
@@ -199,6 +205,65 @@ const Input = () => {
       </div>
     </form>
 >>>>>>> 44fa149... added loading animation
+=======
+    <CardDeck>
+      <Card>
+        <form onSubmit={handleSubmit}>
+          <div className="ui form">
+            <div className="field">
+              <Card.Title>Enter stats</Card.Title>
+              <br></br>
+              <Card.Title> Health</Card.Title>
+              <input type="number" require min="1" value={health} pattern onChange={(e) => setHealth(e.target.value)} />
+              <Card.Title>Stamina</Card.Title>
+              <input type="number" require min="1" value={stamina} onChange={(e) => setStamina(e.target.value)} />
+
+              <Card.Title>Oxygen</Card.Title>
+              <input type="number" require min="1" value={oxygen} onChange={(e) => setOxygen(e.target.value)} />
+
+              <Card.Title>Food</Card.Title>
+              <input type="number" require min="1" value={food} onChange={(e) => setFood(e.target.value)} />
+
+              <Card.Title>Weight</Card.Title>
+              <input type="number" require min="1" value={weight} onChange={(e) => setWeight(e.target.value)} />
+
+              <Card.Title>Melee Damage</Card.Title>
+              <input
+                type="number"
+                require
+                min="1"
+                value={meleeDamage}
+                onChange={(e) => setMeleeDamage(e.target.value)}
+              />
+
+              <Card.Title>Movement Speed</Card.Title>
+              <input
+                type="number"
+                require
+                min="1"
+                value={movementSpeed}
+                onChange={(e) => setMovementSpeed(e.target.value)}
+              />
+
+              <Card.Title>Torpidity</Card.Title>
+              <input type="number" require min="1" value={torpidity} onChange={(e) => setTorpidity(e.target.value)} />
+
+              <Card.Title>Imprinting</Card.Title>
+              <input
+                type="number"
+                require
+                min="1"
+                value={imprinting}
+                onChange={(e) => setImpriniting(e.target.value)}
+              />
+              <br></br>
+              <input type="submit" value="Submit" />
+            </div>
+          </div>
+        </form>
+      </Card>
+    </CardDeck>
+>>>>>>> 8c587da... fixed input.js file and added gif to sources.md
   );
 };
 

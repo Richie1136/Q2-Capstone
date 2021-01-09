@@ -3,6 +3,7 @@ button: https://reactjs.org/docs/forms.html Helped with allowing only image file
 once you choose a img file: https://dev.to/fadiamg/multiple-file-inputs-with-one-submit-button-with-react-hooks-kle card
 for input form: https://react-bootstrap.github.io/components/cards/ dinosaur gif:
 https://media.giphy.com/media/vrKUtJNMtB3Y4/giphy.gif
+<<<<<<< HEAD
 
 Preview to uploaded File:
 https://stackoverflow.com/questions/61744385/preview-of-uploaded-image-in-react-js-using-react-hooks
@@ -10,3 +11,5 @@ https://raw.githubusercontent.com/cadon/ARKStatsExtractor/dev/ARKBreedingStats/j
 
 API Requests Help: 
 Used Vince and TJs demo called Express CRUD Requests (GET ONE PUT PATCH DELETE)
+=======
+>>>>>>> 8c587da... fixed input.js file and added gif to sources.md
