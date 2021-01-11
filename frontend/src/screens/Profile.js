@@ -1,16 +1,7 @@
-
-import React, { useState, useEffect } from 'react';
-
+import React, { useState, useEffect } from "react";
 const Profile = ({ onFormSubmit }) => {
   const [files, setFiles] = useState([]);
-  const [enabled, setEnabled] = useState(false)
-
-
-  const onSubmit = (event) => {
-    event.preventDefault();
-    onFormSubmit(files);
-  };
-
+  const [enabled, setEnabled] = useState(false);
   useEffect(() => {
     if (files.length === 0) {
       setEnabled(false);
@@ -18,10 +9,13 @@ const Profile = ({ onFormSubmit }) => {
       setEnabled(true);
     }
   }, [files]);
-
+  // const onSubmit = (event) => {
+  //   event.preventDefault();
+  //   onFormSubmit(files);
+  // };
   return (
     <div className="File Submit">
-      <form onSubmit={onFormSubmit} >
+      <form onSubmit={onFormSubmit}>
         <div className="image upload">
           <label>Upload Image</label>
           <input
@@ -34,13 +28,12 @@ const Profile = ({ onFormSubmit }) => {
         {enabled ? (
           <button type="submit">Submit</button>
         ) : (
-            <button disabled type="submit">
-              Submit
-            </button>
-          )}
+          <button disabled type="submit">
+            Submit
+          </button>
+        )}
       </form>
     </div>
-  )
-}
-
-export default Profile
+  );
+};
+export default Profile;

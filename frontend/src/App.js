@@ -7,7 +7,7 @@ import { GlobalStyles } from "./components/globalStyles";
 import { lightTheme, darkTheme } from "./components/Themes";
 import { useDarkMode } from "./components/useDarkMode";
 import Toggle from "./components/Toggler";
-import Profile from "../src/screens/Profile";
+// import Profile from "../src/screens/Profile";
 import logo from "../src/assets/stegorock.gif";
 
 function App() {

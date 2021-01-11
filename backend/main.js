@@ -26,11 +26,11 @@ app.get("/user", (req, res) => {
 app.all("./dinos");
 app.get("./dinos/:id");
 
-app.get("/dinos", (req, res) => {
-  res.status(200).json(dinosJSON);
+app.get("/library", (req, res) => {
+  res.status(200).json("This is working");
 });
 
-app.post("/dinos", (req, res) => {
+app.post("/library", (req, res) => {
   const dino = req.body;
   dinosJSON.push(dino);
   res.status(201).send("ok!");
