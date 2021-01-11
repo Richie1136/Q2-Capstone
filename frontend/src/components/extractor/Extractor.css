@@ -1,0 +1,16 @@
+div.extractor-headline {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+div.extractor-card {
+  width: 800px;
+}
+
+div.card {
+  width: 75%;
+}
+
+div.card-deck {
+  width: 75%;
+}
