@@ -1,11 +1,15 @@
 import logo from "../assets/A.gif";
+import Links from "../components/navigation/Links";
 
 export default function Dashboard() {
   return (
-    <div>
-      <img src={logo} alt="Ark A" />
-      <br />
-      <h1>Welcome Home</h1>
-    </div>
+    <>
+      <Links />
+      <div>
+        <img src={logo} alt="Ark A" />
+        <br />
+        <h1>Welcome Home</h1>
+      </div>
+    </>
   );
 }

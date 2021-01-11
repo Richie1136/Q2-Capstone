@@ -8,6 +8,7 @@ import Input from "../Input";
 import Profile from "../../screens/Profile";
 import Library from "../library/Library";
 import Extractor from "../extractor/Extractor";
+import Settings from "../../screens/Settings";
 
 export default function Navigation() {
   return (
@@ -18,6 +19,7 @@ export default function Navigation() {
       <ConnectedRoute path="/input" component={Input} />
       <ConnectedRoute path="/library" component={Library} />
       <ConnectedRoute exact path="/extractor" component={Extractor} />
+      <ConnectedRoute path="/user/settings" component={Settings} />
       <ConnectedRoute path="*" component={NotFound} />
     </Switch>
   );

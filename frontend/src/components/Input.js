@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CardDeck from "react-bootstrap/CardDeck";
 import Card from "react-bootstrap/Card";
+import Links from "../components/navigation/Links";
 
 const Input = () => {
   // const [stats, setStat] = useState([]);
@@ -29,6 +30,7 @@ const Input = () => {
 
   return (
     <>
+      <Links />
       <CardDeck>
         <Card>
           <form onSubmit={handleSubmit}>

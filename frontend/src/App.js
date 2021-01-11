@@ -40,7 +40,8 @@ function App() {
       <>
         <GlobalStyles />
         <div className="App">
-          <Toggle theme={theme} toggleTheme={themeToggler} />
+          <Toggle theme={theme} toggleTheme={themeToggler} /> <Navigation />
+          {/* <Links /> */}
           {auth.loggedIn ? (
             <div>
               You are logged-in.
@@ -52,9 +53,6 @@ function App() {
               <button onClick={loginNow}>Login Now</button>
             </div>
           )}
-
-          <Navigation />
-          <Links />
         </div>
       </>
     </ThemeProvider>
