@@ -11,29 +11,42 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// mongoose.connect(process.env.DB_CONNECTION, { useUnifiedTopology: true, useNewUrlParser: true }, () => {
-//   console.log("connected to mongodb");
-// });
+const MongoClient = require("mongodb").MongoClient;
+const uri = "mongodb+srv://Ark_Kapstone8:ArkApp2021@dino-data.2cygx.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
 
 app.get("/", (req, res) => {
   res.send("homepage");
 });
-
 app.get("/user", (req, res) => {
   res.send("profile info page");
 });
 
-app.all("./dinos");
-app.get("./dinos/:id");
-
+// res.status(200).json("This is working");
 app.get("/library", (req, res) => {
-  res.status(200).json("This is working");
+  client.connect((err) => {
+    const collection = client.db("test").collection("dino-data");
+    collection.find().toArray((err, documents) => {
+      if (err) {
+        throw err;
+      }
+      res.send(documents);
+    });
+    client.close();
+  });
 });
 
 app.post("/library", (req, res) => {
-  const dino = req.body;
-  dinosJSON.push(dino);
-  res.status(201).send("ok!");
+  client.connect((err) => {
+    const collection = client.db("test").collection("dino-data");
+    collection.insertOne(req.body, (err, result) => {
+      if (err) {
+        throw err;
+      }
+      res.send(result.insertedId);
+    });
+    client.close();
+  });
 });
 
 app.get("*", (req, res) => {
