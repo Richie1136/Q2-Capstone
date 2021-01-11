@@ -4,7 +4,6 @@ import Card from "react-bootstrap/Card";
 import Links from "../components/navigation/Links";
 
 const Input = () => {
-  // const [stats, setStat] = useState([]);
   const [health, setHealth] = useState(0);
   const [stamina, setStamina] = useState(0);
   const [oxygen, setOxygen] = useState(0);
@@ -45,16 +44,17 @@ const Input = () => {
                 <input
                   className="stat"
                   type="number"
+                  pattern="true"
                   require
                   min="1"
                   value={health}
-                  pattern
                   onChange={(e) => setHealth(e.target.value)}
                 />
                 <Card.Title>Stamina</Card.Title>
                 <input
                   className="stat"
                   type="number"
+                  pattern="true"
                   require
                   min="1"
                   value={stamina}
@@ -65,6 +65,7 @@ const Input = () => {
                 <input
                   className="stat"
                   type="number"
+                  pattern="true"
                   require
                   min="1"
                   value={oxygen}
@@ -75,6 +76,7 @@ const Input = () => {
                 <input
                   className="stat"
                   type="number"
+                  pattern="true"
                   require
                   min="1"
                   value={food}
@@ -85,6 +87,7 @@ const Input = () => {
                 <input
                   className="stat"
                   type="number"
+                  pattern="true"
                   require
                   min="1"
                   value={weight}
@@ -95,6 +98,7 @@ const Input = () => {
                 <input
                   className="stat"
                   type="number"
+                  pattern="true"
                   require
                   min="1"
                   value={meleeDamage}
@@ -105,6 +109,7 @@ const Input = () => {
                 <input
                   className="stat"
                   type="number"
+                  pattern="true"
                   require
                   min="1"
                   value={movementSpeed}
@@ -115,6 +120,7 @@ const Input = () => {
                 <input
                   className="stat"
                   type="number"
+                  pattern="true"
                   require
                   min="1"
                   value={torpidity}
@@ -125,6 +131,7 @@ const Input = () => {
                 <input
                   className="stat"
                   type="number"
+                  pattern="true"
                   require
                   min="1"
                   value={imprinting}
