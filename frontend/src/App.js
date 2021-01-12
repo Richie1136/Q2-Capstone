@@ -7,7 +7,11 @@ import { GlobalStyles } from "./components/globalStyles";
 import { lightTheme, darkTheme } from "./components/Themes";
 import { useDarkMode } from "./components/useDarkMode";
 import Toggle from "./components/Toggler";
+<<<<<<< HEAD
 // import Profile from "../src/screens/Profile";
+=======
+import Profile from "../src/screens/Profile";
+>>>>>>> 44fa149... added loading animation
 import logo from "../src/assets/stegorock.gif";
 
 function App() {
@@ -53,6 +57,12 @@ function App() {
               <button onClick={loginNow}>Login Now</button>
             </div>
           )}
+<<<<<<< HEAD
+=======
+
+          <Navigation />
+          <Links />
+>>>>>>> 44fa149... added loading animation
         </div>
       </>
     </ThemeProvider>
