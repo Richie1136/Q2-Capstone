@@ -1,5 +1,6 @@
 div.extractor-headline {
   display: flex;
+<<<<<<< HEAD
   flex-direction: column;
 }
 div.extractor-card {
@@ -10,11 +11,23 @@ div.extractor-card {
 div.stat-input.card {
   display: flex;
   width: 40%;
+=======
+  flex-direction: row;
+  text-align: center;
+}
+div.extractor-card {
+  width: 800px;
+}
+
+div.card {
+  width: 75%;
+>>>>>>> ec47727... stat icons, card formatting, dino dropdown(extractor)
 }
 
 div.card-deck {
   width: 75%;
 }
+<<<<<<< HEAD
 
 div.extractor-card {
   display: flex;
@@ -32,3 +45,5 @@ div.stat-output.card-deck {
 div.locker.card-deck {
   width: 10%;
 }
+=======
+>>>>>>> ec47727... stat icons, card formatting, dino dropdown(extractor)
