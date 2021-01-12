@@ -17,8 +17,14 @@ Used Vince and TJs demo called Express CRUD Requests (GET ONE PUT PATCH DELETE)
 >>>>>>> 8c587da... fixed input.js file and added gif to sources.md
 =======
 
+<<<<<<< HEAD
 Preview to uploaded File: https://stackoverflow.com/questions/61744385/preview-of-uploaded-image-in-react-js-using-react-hooks
 >>>>>>> 58f8367... Update sources.md
 =======
 https://media.giphy.com/media/vrKUtJNMtB3Y4/giphy.gif https://react-bootstrap.github.io/getting-started/introduction/
 >>>>>>> ec47727... stat icons, card formatting, dino dropdown(extractor)
+=======
+Preview to uploaded File:
+https://stackoverflow.com/questions/61744385/preview-of-uploaded-image-in-react-js-using-react-hooks
+https://raw.githubusercontent.com/cadon/ARKStatsExtractor/dev/ARKBreedingStats/json/values/values.json
+>>>>>>> da30e8f... updated json values to be 5 dinos for project and cited source
