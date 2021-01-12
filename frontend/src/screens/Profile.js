@@ -4,10 +4,13 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Links from "../components/navigation/Links";
 import './Profile.css'
+<<<<<<< HEAD
 =======
 import { Link } from "react-router-dom";
 import Links from "../components/navigation/Links";
 >>>>>>> 8a3ecf4... adjusted navigation so everything is at top of page under theme toggler
+=======
+>>>>>>> e935c56... Changed Profile
 
 const Profile = ({ onFormSubmit }) => {
   const [files, setFiles] = useState([]);
@@ -38,11 +41,14 @@ const Profile = ({ onFormSubmit }) => {
   };
 
 
+<<<<<<< HEAD
 =======
 const Profile = ({ onFormSubmit }) => {
   const [files, setFiles] = useState([]);
   const [enabled, setEnabled] = useState(false);
 >>>>>>> a994305... Working on API and navbar
+=======
+>>>>>>> e935c56... Changed Profile
   useEffect(() => {
     if (tribeName.length === 0) {
       setEnabled(false);
@@ -50,10 +56,14 @@ const Profile = ({ onFormSubmit }) => {
       setEnabled(true);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
   }, [tribeName]);
 =======
   }, [files]);
 >>>>>>> a994305... Working on API and navbar
+=======
+  }, [tribeName]);
+>>>>>>> e935c56... Changed Profile
   // const onSubmit = (event) => {
   //   event.preventDefault();
   //   onFormSubmit(files);
@@ -68,11 +78,15 @@ const Profile = ({ onFormSubmit }) => {
       <Link to="/user/settings">Settings</Link>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       <form className="File Submit">
 =======
     <div className="File Submit">
       <form onSubmit={onFormSubmit}>
 >>>>>>> a994305... Working on API and navbar
+=======
+      <form className="File Submit">
+>>>>>>> e935c56... Changed Profile
         <div className="image upload">
           <label>Upload Image</label>
           <img className="ProfilePic" src={imgData} height="180px" width="180px" />
@@ -83,6 +97,7 @@ const Profile = ({ onFormSubmit }) => {
           />
 
           <button type="submit">Submit</button>
+<<<<<<< HEAD
 <<<<<<< HEAD
           <div className="previewProfilePic">
 
@@ -129,19 +144,39 @@ const Profile = ({ onFormSubmit }) => {
               value={files}
               onChange={(event) => setFiles(event.target.value)}
             />
+=======
+          <div className="previewProfilePic">
+
+>>>>>>> e935c56... Changed Profile
           </div>
-          {enabled ? (
+        </div>
+        <br />
+        <h1>Enter Tribe Name</h1>
+        <div onSubmit={onFormSubmit} >
+          <input
+            type="text"
+            value={tribeName}
+            onChange={(event) => SetTribeName(event.target.value)}
+          />
+        </div>
+        {
+          enabled ? (
             <button type="submit">Submit</button>
           ) : (
-            <button disabled type="submit">
-              Submit
-            </button>
-          )}
-        </form>
-      </div>
+              <button disabled type="submit">
+                Submit
+              </button>
+            )
+        }
+      </form>
     </>
+<<<<<<< HEAD
 >>>>>>> 8a3ecf4... adjusted navigation so everything is at top of page under theme toggler
   );
 };
 >>>>>>> a994305... Working on API and navbar
+=======
+  )
+}
+>>>>>>> e935c56... Changed Profile
 export default Profile;
