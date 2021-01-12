@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Library.css";
+<<<<<<< HEAD
 import Links from "../navigation/Links";
+=======
+>>>>>>> 0f015bd... set up Library table and styling
 
 const URL = ""; //need to get api set up or something to get data from
 const Table = () => {
@@ -69,7 +72,10 @@ const Table = () => {
   };
   return (
     <>
+<<<<<<< HEAD
       <Links />
+=======
+>>>>>>> 0f015bd... set up Library table and styling
       <h1 id="title">Dino Library</h1>
       <table id="dino">
         <thead>

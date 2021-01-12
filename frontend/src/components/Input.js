@@ -12,7 +12,7 @@ import Card from "react-bootstrap/Card";
 >>>>>>> 8c587da... fixed input.js file and added gif to sources.md
 
 const Input = () => {
-  const [stats, setStats] = useState("");
+  // const [stats, setStats] = useState("");
   const [health, setHealth] = useState(0);
   const [stamina, setStamina] = useState(0);
   const [oxygen, setOxygen] = useState(0);
