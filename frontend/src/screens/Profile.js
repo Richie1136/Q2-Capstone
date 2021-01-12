@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+<<<<<<< HEAD
 import { Link } from "react-router-dom";
 import Links from "../components/navigation/Links";
 import './Profile.css'
@@ -32,23 +33,37 @@ const Profile = ({ onFormSubmit }) => {
   };
 
 
+=======
+const Profile = ({ onFormSubmit }) => {
+  const [files, setFiles] = useState([]);
+  const [enabled, setEnabled] = useState(false);
+>>>>>>> a994305... Working on API and navbar
   useEffect(() => {
     if (tribeName.length === 0) {
       setEnabled(false);
     } else {
       setEnabled(true);
     }
+<<<<<<< HEAD
   }, [tribeName]);
+=======
+  }, [files]);
+>>>>>>> a994305... Working on API and navbar
   // const onSubmit = (event) => {
   //   event.preventDefault();
   //   onFormSubmit(files);
   // };
   return (
+<<<<<<< HEAD
     <>
       <Links />
       <Link to="/user/settings">Settings</Link>
 
       <form className="File Submit">
+=======
+    <div className="File Submit">
+      <form onSubmit={onFormSubmit}>
+>>>>>>> a994305... Working on API and navbar
         <div className="image upload">
           <label>Upload Image</label>
           <img className="ProfilePic" src={imgData} height="180px" width="180px" />
@@ -59,6 +74,7 @@ const Profile = ({ onFormSubmit }) => {
           />
 
           <button type="submit">Submit</button>
+<<<<<<< HEAD
           <div className="previewProfilePic">
 
           </div>
@@ -85,4 +101,15 @@ const Profile = ({ onFormSubmit }) => {
     </>
   )
 }
+=======
+        ) : (
+          <button disabled type="submit">
+            Submit
+          </button>
+        )}
+      </form>
+    </div>
+  );
+};
+>>>>>>> a994305... Working on API and navbar
 export default Profile;

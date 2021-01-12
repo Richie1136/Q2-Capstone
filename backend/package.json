@@ -18,7 +18,11 @@
     "esm": "^3.2.25",
     "express": "^4.17.1",
     "mongodb": "^3.6.3",
+<<<<<<< HEAD
     "mongoose": "^5.11.11"
+=======
+    "mongoose": "^5.11.10"
+>>>>>>> a994305... Working on API and navbar
   },
   "devDependencies": {
     "nodemon": "^2.0.7"

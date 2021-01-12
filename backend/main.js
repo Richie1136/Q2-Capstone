@@ -30,6 +30,7 @@ app.get("/user", (req, res) => {
 //   });
 // });
 
+<<<<<<< HEAD
 app.get("/library", (req, res) => {
   client.connect((err) => {
     const collection = client.db("values").collection("dinos");
@@ -54,6 +55,19 @@ app.post("/library", (req, res) => {
     });
     client.close();
   });
+=======
+app.all("./dinos");
+app.get("./dinos/:id");
+
+app.get("/library", (req, res) => {
+  res.status(200).json("This is working");
+});
+
+app.post("/library", (req, res) => {
+  const dino = req.body;
+  dinosJSON.push(dino);
+  res.status(201).send("ok!");
+>>>>>>> a994305... Working on API and navbar
 });
 
 app.get("*", (req, res) => {

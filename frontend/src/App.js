@@ -8,10 +8,14 @@ import { lightTheme, darkTheme } from "./components/Themes";
 import { useDarkMode } from "./components/useDarkMode";
 import Toggle from "./components/Toggler";
 <<<<<<< HEAD
+<<<<<<< HEAD
 // import Profile from "../src/screens/Profile";
 =======
 import Profile from "../src/screens/Profile";
 >>>>>>> 44fa149... added loading animation
+=======
+// import Profile from "../src/screens/Profile";
+>>>>>>> a994305... Working on API and navbar
 import logo from "../src/assets/stegorock.gif";
 
 function App() {
