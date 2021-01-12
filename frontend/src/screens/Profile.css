@@ -1,0 +1,13 @@
+.ProfilePic {
+  display: flex;
+  justify-content: center;
+}
+
+.img {
+  color: red;
+}
+
+label {
+  display: flex;
+  text-align: left;
+}
