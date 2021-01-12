@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Link } from "react-router-dom";
 import Links from "../components/navigation/Links";
 import './Profile.css'
+=======
+import { Link } from "react-router-dom";
+import Links from "../components/navigation/Links";
+>>>>>>> 8a3ecf4... adjusted navigation so everything is at top of page under theme toggler
 
 const Profile = ({ onFormSubmit }) => {
   const [files, setFiles] = useState([]);
@@ -55,10 +60,14 @@ const Profile = ({ onFormSubmit }) => {
   // };
   return (
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8a3ecf4... adjusted navigation so everything is at top of page under theme toggler
     <>
       <Links />
       <Link to="/user/settings">Settings</Link>
 
+<<<<<<< HEAD
       <form className="File Submit">
 =======
     <div className="File Submit">
@@ -109,6 +118,29 @@ const Profile = ({ onFormSubmit }) => {
         )}
       </form>
     </div>
+=======
+      <div className="File Submit">
+        <form onSubmit={onFormSubmit}>
+          <div className="image upload">
+            <label>Upload Image</label>
+            <input
+              type="file"
+              accept=".jpg, .jpeg, .pdf"
+              value={files}
+              onChange={(event) => setFiles(event.target.value)}
+            />
+          </div>
+          {enabled ? (
+            <button type="submit">Submit</button>
+          ) : (
+            <button disabled type="submit">
+              Submit
+            </button>
+          )}
+        </form>
+      </div>
+    </>
+>>>>>>> 8a3ecf4... adjusted navigation so everything is at top of page under theme toggler
   );
 };
 >>>>>>> a994305... Working on API and navbar

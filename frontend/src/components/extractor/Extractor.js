@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import "./Extractor.css";
 import React, { useState } from "react";
 import CardDeck from "react-bootstrap/CardDeck";
@@ -284,3 +285,15 @@ const Input = () => {
 };
 
 export default Input;
+=======
+import Links from "../navigation/Links";
+
+export default function Extractor() {
+  return (
+    <>
+      <Links />
+      <h1>Dino Stat Extractor page-will be hardest to complete. Do last</h1>
+    </>
+  );
+}
+>>>>>>> 8a3ecf4... adjusted navigation so everything is at top of page under theme toggler

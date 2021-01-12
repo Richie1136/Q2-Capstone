@@ -62,11 +62,14 @@ function App() {
             </div>
           )}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
           <Navigation />
           <Links />
 >>>>>>> 44fa149... added loading animation
+=======
+>>>>>>> 8a3ecf4... adjusted navigation so everything is at top of page under theme toggler
         </div>
       </>
     </ThemeProvider>

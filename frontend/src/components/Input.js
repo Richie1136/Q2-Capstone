@@ -4,12 +4,15 @@ import React, { useState } from "react";
 import CardDeck from "react-bootstrap/CardDeck";
 import Card from "react-bootstrap/Card";
 import Links from "../components/navigation/Links";
+<<<<<<< HEAD
 =======
 >>>>>>> 44fa149... added loading animation
 =======
 import CardDeck from "react-bootstrap/CardDeck";
 import Card from "react-bootstrap/Card";
 >>>>>>> 8c587da... fixed input.js file and added gif to sources.md
+=======
+>>>>>>> 8a3ecf4... adjusted navigation so everything is at top of page under theme toggler
 
 const Input = () => {
   // const [stats, setStat] = useState([]);
@@ -220,6 +223,7 @@ const Input = () => {
               <input type="number" require min="1" value={stamina} onChange={(e) => setStamina(e.target.value)} />
 =======
     <>
+      <Links />
       <CardDeck>
         <Card>
           <form onSubmit={handleSubmit}>
