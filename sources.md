@@ -7,3 +7,6 @@ https://media.giphy.com/media/vrKUtJNMtB3Y4/giphy.gif
 Preview to uploaded File:
 https://stackoverflow.com/questions/61744385/preview-of-uploaded-image-in-react-js-using-react-hooks
 https://raw.githubusercontent.com/cadon/ARKStatsExtractor/dev/ARKBreedingStats/json/values/values.json
+
+API Requests Help: 
+Used Vince and TJs demo called Express CRUD Requests (GET ONE PUT PATCH DELETE)
