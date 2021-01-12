@@ -13,6 +13,7 @@ https://raw.githubusercontent.com/cadon/ARKStatsExtractor/dev/ARKBreedingStats/j
 
 API Requests Help: 
 Used Vince and TJs demo called Express CRUD Requests (GET ONE PUT PATCH DELETE)
+<<<<<<< HEAD
 =======
 >>>>>>> 8c587da... fixed input.js file and added gif to sources.md
 =======
@@ -28,3 +29,5 @@ Preview to uploaded File:
 https://stackoverflow.com/questions/61744385/preview-of-uploaded-image-in-react-js-using-react-hooks
 https://raw.githubusercontent.com/cadon/ARKStatsExtractor/dev/ARKBreedingStats/json/values/values.json
 >>>>>>> da30e8f... updated json values to be 5 dinos for project and cited source
+=======
+>>>>>>> 602939c... Update sources.md
