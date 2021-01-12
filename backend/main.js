@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 const MongoClient = require("mongodb").MongoClient;
 
-const uri = "mongodb+srv://Ark_Kapstone8:ArkApp2021@dino-data.2cygx.mongodb.net/test?retryWrites=true&w=majority";
+//need to have uri in .env file, not commit the link to the repo.
 const client = new MongoClient(uri, { useNewUrlParser: true });
 
 app.get("/", (req, res) => {
@@ -55,11 +55,6 @@ app.post("/library", (req, res) => {
     client.close();
   });
 
-  app.all("./dinos");
-  app.get("./dinos/:id");
-
-
-  // res.status(200).json("This is working");
 
   app.get("/library", (req, res) => {
     client.connect((err) => {
@@ -75,11 +70,6 @@ app.post("/library", (req, res) => {
   });
 
   app.post("/library", (req, res) => {
-
-    const dino = req.body;
-    dinosJSON.push(dino);
-    res.status(201).send("ok!");
-
     client.connect((err) => {
       const collection = client.db("values").collection("dinos");
       collection.insertOne(req.body, (err, result) => {
