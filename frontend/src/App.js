@@ -49,10 +49,10 @@ function App() {
               <button onClick={() => auth.logout()}>Logout</button>
             </div>
           ) : (
-            <div>
-              <button onClick={loginNow}>Login Now</button>
-            </div>
-          )}
+              <div>
+                <button onClick={loginNow}>Login Now</button>
+              </div>
+            )}
         </div>
       </>
     </ThemeProvider>
@@ -60,3 +60,5 @@ function App() {
 }
 
 export default App;
+
+
