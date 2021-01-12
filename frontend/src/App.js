@@ -7,15 +7,7 @@ import { GlobalStyles } from "./components/globalStyles";
 import { lightTheme, darkTheme } from "./components/Themes";
 import { useDarkMode } from "./components/useDarkMode";
 import Toggle from "./components/Toggler";
-<<<<<<< HEAD
-<<<<<<< HEAD
 // import Profile from "../src/screens/Profile";
-=======
-import Profile from "../src/screens/Profile";
->>>>>>> 44fa149... added loading animation
-=======
-// import Profile from "../src/screens/Profile";
->>>>>>> a994305... Working on API and navbar
 import logo from "../src/assets/stegorock.gif";
 
 function App() {
@@ -57,19 +49,10 @@ function App() {
               <button onClick={() => auth.logout()}>Logout</button>
             </div>
           ) : (
-            <div>
-              <button onClick={loginNow}>Login Now</button>
-            </div>
-          )}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-          <Navigation />
-          <Links />
->>>>>>> 44fa149... added loading animation
-=======
->>>>>>> 8a3ecf4... adjusted navigation so everything is at top of page under theme toggler
+              <div>
+                <button onClick={loginNow}>Login Now</button>
+              </div>
+            )}
         </div>
       </>
     </ThemeProvider>
@@ -77,3 +60,5 @@ function App() {
 }
 
 export default App;
+
+

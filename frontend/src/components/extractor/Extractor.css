@@ -1,7 +1,5 @@
 div.extractor-headline {
   display: flex;
-<<<<<<< HEAD
-<<<<<<< HEAD
   flex-direction: column;
 }
 div.extractor-card {
@@ -12,36 +10,11 @@ div.extractor-card {
 div.stat-input.card {
   display: flex;
   width: 40%;
-=======
-  flex-direction: row;
-  text-align: center;
-=======
-  flex-direction: column;
->>>>>>> c050088... set up skeleton of other parts of extractor
-}
-div.extractor-card {
-  width: 800px;
-  align-items: ;
-}
-
-<<<<<<< HEAD
-div.card {
-  width: 75%;
->>>>>>> ec47727... stat icons, card formatting, dino dropdown(extractor)
-=======
-div.stat-input.card {
-  display: flex;
-  width: 40%;
->>>>>>> c050088... set up skeleton of other parts of extractor
 }
 
 div.card-deck {
   width: 75%;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c050088... set up skeleton of other parts of extractor
 
 div.extractor-card {
   display: flex;
@@ -59,8 +32,3 @@ div.stat-output.card-deck {
 div.locker.card-deck {
   width: 10%;
 }
-<<<<<<< HEAD
-=======
->>>>>>> ec47727... stat icons, card formatting, dino dropdown(extractor)
-=======
->>>>>>> c050088... set up skeleton of other parts of extractor

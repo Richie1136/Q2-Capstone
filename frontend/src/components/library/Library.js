@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Library.css";
-<<<<<<< HEAD
-<<<<<<< HEAD
 import Links from "../navigation/Links";
-=======
->>>>>>> 0f015bd... set up Library table and styling
-=======
-import Links from "../navigation/Links";
->>>>>>> 8a3ecf4... adjusted navigation so everything is at top of page under theme toggler
 
 const URL = ""; //need to get api set up or something to get data from
 const Table = () => {
@@ -76,14 +69,7 @@ const Table = () => {
   };
   return (
     <>
-<<<<<<< HEAD
-<<<<<<< HEAD
       <Links />
-=======
->>>>>>> 0f015bd... set up Library table and styling
-=======
-      <Links />
->>>>>>> 8a3ecf4... adjusted navigation so everything is at top of page under theme toggler
       <h1 id="title">Dino Library</h1>
       <table id="dino">
         <thead>
@@ -95,3 +81,4 @@ const Table = () => {
   );
 };
 export default Table;
+
