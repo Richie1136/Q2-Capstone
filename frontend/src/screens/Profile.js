@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import Links from "../components/navigation/Links"
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Links from "../components/navigation/Links";
+import Settings from "./Settings";
 import './Profile.css'
 
 const Profile = ({ onFormSubmit }) => {
@@ -82,12 +83,13 @@ const Profile = ({ onFormSubmit }) => {
           enabled ? (
             <button type="submit">Submit</button>
           ) : (
-              <button disabled type="submit">
-                Submit
-              </button>
-            )
-        }
-      </form >
+            <button disabled type="submit">
+              Submit
+            </button>
+          )}
+        </form>
+        <Settings />
+      </div>
     </>
   )
 }
