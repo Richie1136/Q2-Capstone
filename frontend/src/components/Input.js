@@ -17,15 +17,17 @@ const Input = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(health);
-    console.log(stamina);
-    console.log(oxygen);
-    console.log(food);
-    console.log(weight);
-    console.log(meleeDamage);
-    console.log(movementSpeed);
-    console.log(torpidity);
-    console.log(imprinting);
+    let stats = {
+      health,
+      stamina,
+      oxygen,
+      food,
+      weight,
+      meleeDamage,
+      movementSpeed,
+      torpidity,
+      imprinting,
+    };
   };
 
   return (
