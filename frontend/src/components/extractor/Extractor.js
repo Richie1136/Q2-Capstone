@@ -4,7 +4,7 @@ import CardDeck from "react-bootstrap/CardDeck";
 import Card from "react-bootstrap/Card";
 import Links from "../navigation/Links";
 import "./dinoNames";
-import dinoNames from "./dinoNames";
+// import dinoNames from "./dinoNames";
 import Form from "react-bootstrap/Form";
 
 const Input = () => {
@@ -52,16 +52,16 @@ const Input = () => {
                       <b>Enter stats</b>
                     </Card.Title>
                     <br></br>
-                    <Form.Group controlId="formGridCreature">
+                    <Form.Group controlId="CreatureType">
                       <Form.Label>Creature</Form.Label>  
                       <br />
                       <Form.Control as="select" defaultValue="Choose..." required>
                         <option>Choose...</option>
-                        <option>Giganotosaurus</option>
-                        <option>Quetzal</option>
-                        <option>Stegosaurus</option>
-                        <option>Tusoteuthis</option>
-                        <option>Yutyrannus</option>
+                        <option value="Giganotosaurus">Giganotosaurus</option>
+                        <option value="Quetzal">Quetzal</option>
+                        <option value="Stegosaurus">Stegosaurus</option>
+                        <option value="Tusoteuthis">Tusoteuthis</option>
+                        <option value="Yutyrannus">Yutyrannus</option>
                       </Form.Control>
                     </Form.Group>
                     {" "}
@@ -197,24 +197,24 @@ const Input = () => {
                     <br></br>
                     <Card.Title></Card.Title>
                     <br></br>
-                    <Form.Group controlId="formGridCreature">
+                    <Form.Group controlId="Gender">
                       <Form.Label>Gender</Form.Label>  
                       <br />
                       <Form.Control as="select" defaultValue="Choose..." required>
                         <option>Choose...</option>
-                        <option>Male</option>
-                        <option>Female</option>
-                        <option>Spayed</option>
-                        <option>Neutered</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Spayed">Spayed</option>
+                        <option value="Neutered">Neutered</option>
                       </Form.Control>
                     </Form.Group>
-                    <Form.Group>
+                    <Form.Group controlId="Status">
                       <Form.Control as="select" defaultValue="Choose..." required>
                         <option>Choose...</option>
-                        <option>Available</option>
-                        <option>On Timer</option>
-                        <option>Cryopod</option>
-                        <option>Deceased</option>
+                        <option value="Available">Available</option>
+                        <option value="On Timer">On Timer</option>
+                        <option value="Cryopod">Cryopod</option>
+                        <option value="Deceased">Deceased</option>
                       </Form.Control>
                     </Form.Group>
                     {" "}
