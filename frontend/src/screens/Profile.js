@@ -54,8 +54,8 @@ const Profile = ({ onFormSubmit }) => {
       <Link to="/user/settings">Settings</Link>
       <form className="File Submit">
         <div className="image upload">
-          <label>Upload Image</label>
-          <img className="ProfilePic" src={imgData} height="180px" width="180px" />
+          <label>Avatar</label>
+          <img className="ProfilePic" src={imgData} alt="" height="180px" width="180px" />
           <input
             type="file"
             accept=".jpg, .jpeg, .pdf, .png, .svg"
