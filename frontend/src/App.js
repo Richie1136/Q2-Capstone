@@ -1,6 +1,5 @@
 import "./App.css";
 import Navigation from "./components/navigation/Navigation";
-import Links from "./components/navigation/Links";
 import useAuth from "./hooks/useAuth";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./components/globalStyles";
@@ -49,10 +48,10 @@ function App() {
               <button onClick={() => auth.logout()}>Logout</button>
             </div>
           ) : (
-              <div>
-                <button onClick={loginNow}>Login Now</button>
-              </div>
-            )}
+            <div>
+              <button onClick={loginNow}>Login Now</button>
+            </div>
+          )}
         </div>
       </>
     </ThemeProvider>
@@ -60,5 +59,3 @@ function App() {
 }
 
 export default App;
-
-
