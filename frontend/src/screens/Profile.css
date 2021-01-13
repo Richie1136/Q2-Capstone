@@ -1,6 +1,7 @@
 .ProfilePic {
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .img {
@@ -9,5 +10,5 @@
 
 label {
   display: flex;
-  text-align: left;
+  align-items: left;
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import "./components/dinocard/DinoCard";
+// import "./components/dinocard/DinoCard";
+import './DinoCard.css'
 
 Modal.setAppElement("#root");
 
@@ -13,7 +14,7 @@ function DinoCard(props) {
         <h2>Dino Library</h2>
         <p>Welcome to default Ark library</p>
         <div>
-          <button onClick={() => setModalIsOpen(false)}>Close</button>
+          <button className="button" onClick={() => setModalIsOpen(false)}>Close</button>
         </div>
       </Modal>
     </div>
