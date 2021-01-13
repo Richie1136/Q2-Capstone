@@ -2,6 +2,7 @@ import express, { urlencoded } from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
+import connectToDatabase from "./mongo";
 
 const app = express();
 const port = 4000;
@@ -10,6 +11,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(async (req, res, next) => {
+  const connection = await connectToDatabase();
+  req.db = connection;
+});
 
 const MongoClient = require("mongodb").MongoClient;
 const uri = "mongodb+srv://Kenzie8:Kenzie2021@ark-stat-app01.tp6cj.mongodb.net/test";
