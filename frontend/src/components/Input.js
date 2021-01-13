@@ -46,7 +46,6 @@ const Input = () => {
                   className="stat"
                   type="number"
                   pattern="true"
-                  require
                   min="1"
                   value={health}
                   onChange={(e) => setHealth(e.target.value)}
@@ -56,7 +55,6 @@ const Input = () => {
                   className="stat"
                   type="number"
                   pattern="true"
-                  require
                   min="1"
                   value={stamina}
                   onChange={(e) => setStamina(e.target.value)}
@@ -67,7 +65,6 @@ const Input = () => {
                   className="stat"
                   type="number"
                   pattern="true"
-                  require
                   min="1"
                   value={oxygen}
                   onChange={(e) => setOxygen(e.target.value)}
@@ -78,7 +75,6 @@ const Input = () => {
                   className="stat"
                   type="number"
                   pattern="true"
-                  require
                   min="1"
                   value={food}
                   onChange={(e) => setFood(e.target.value)}
@@ -89,7 +85,6 @@ const Input = () => {
                   className="stat"
                   type="number"
                   pattern="true"
-                  require
                   min="1"
                   value={weight}
                   onChange={(e) => setWeight(e.target.value)}
@@ -100,7 +95,6 @@ const Input = () => {
                   className="stat"
                   type="number"
                   pattern="true"
-                  require
                   min="1"
                   value={meleeDamage}
                   onChange={(e) => setMeleeDamage(e.target.value)}
@@ -111,7 +105,6 @@ const Input = () => {
                   className="stat"
                   type="number"
                   pattern="true"
-                  require
                   min="1"
                   value={movementSpeed}
                   onChange={(e) => setMovementSpeed(e.target.value)}
@@ -122,7 +115,6 @@ const Input = () => {
                   className="stat"
                   type="number"
                   pattern="true"
-                  require
                   min="1"
                   value={torpidity}
                   onChange={(e) => setTorpidity(e.target.value)}
@@ -133,7 +125,6 @@ const Input = () => {
                   className="stat"
                   type="number"
                   pattern="true"
-                  require
                   min="1"
                   value={imprinting}
                   onChange={(e) => setImpriniting(e.target.value)}
@@ -151,7 +142,5 @@ const Input = () => {
     </>
   );
 };
-
-
 
 export default Input;
