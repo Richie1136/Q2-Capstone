@@ -63,6 +63,7 @@ const Profile = ({ onFormSubmit }) => {
             // onChange={(event) => setFiles(event.target.value)}
             onChange={onChangePicture}
           />
+<<<<<<< HEAD
 <<<<<<< HEAD:frontend/src/screens/Profile.js
           <button className="submit" type="submit">Upload</button>
           <div className="previewProfilePic">
@@ -71,6 +72,16 @@ const Profile = ({ onFormSubmit }) => {
           <button type="submit">Upload</button>
           <div className="previewProfilePic"></div>
 >>>>>>> fe4858d... Organized file structure and cleared up errors in console:frontend/src/components/profile/Profile.js
+=======
+<<<<<<< HEAD:frontend/src/components/profile/Profile.js
+          <button type="submit">Upload</button>
+          <div className="previewProfilePic"></div>
+=======
+          <button className="submit" type="submit">Upload</button>
+          <div className="previewProfilePic">
+          </div>
+>>>>>>> 2bdc2fa... Made some changes to the Profile.CSS:frontend/src/screens/Profile.js
+>>>>>>> 758fc5c... Fixing merge issue on my end
         </div>
         <br />
         <h1>Enter Tribe Name</h1>
