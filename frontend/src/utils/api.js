@@ -15,15 +15,7 @@ export const uploadTolibrary = async () => {
 };
 
 export const libraryStorage = () => {
-  axios
-    .get(`${url}/library`)
-    .then((res) => {
-      console.log(res.data.id);
-      console.log(res.data.title);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  fetch("");
 };
 
 // export const uploadTolibrary = async () => {
