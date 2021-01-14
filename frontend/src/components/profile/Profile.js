@@ -63,6 +63,7 @@ const Profile = ({ onFormSubmit }) => {
             // onChange={(event) => setFiles(event.target.value)}
             onChange={onChangePicture}
           />
+<<<<<<< HEAD
 
           <button className="submit" type="submit">Upload</button>
           <div className="previewProfilePic">
@@ -70,6 +71,11 @@ const Profile = ({ onFormSubmit }) => {
           <button className="submit" type="submit">Upload</button>
           <div className="previewProfilePic">
           </div>
+=======
+          <button className="submit" type="submit">Upload</button>
+          <div className="previewProfilePic"></div>
+        </div>
+>>>>>>> 9bb32a0... Updated Profile.css
         <br />
         <h1>Enter Tribe Name</h1>
         <div onSubmit={onFormSubmit}>
@@ -78,11 +84,18 @@ const Profile = ({ onFormSubmit }) => {
         {enabled ? (
           <button type="submit">Submit</button>
         ) : (
+<<<<<<< HEAD
           <button disabled type="submit">
             Submit
           </button>
         )}
         </div>
+=======
+            <button disabled type="submit">
+              Submit
+            </button>
+          )}
+>>>>>>> 9bb32a0... Updated Profile.css
       </form>
       // <Settings />
     </>
