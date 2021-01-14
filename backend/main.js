@@ -4,7 +4,7 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import { Dino } from "./dinoSchema";
 import dotenv from "dotenv";
-import { libraryStorage, uploadTolibrary } from "../frontend/src/utils/api";
+import { libraryStorage } from "../frontend/src/utils/api";
 import { Db } from "mongodb";
 
 dotenv.config();
@@ -33,6 +33,7 @@ app.get("/user", (req, res) => {
 
 //generate user ID, unique key
 app.get("/library", async (req, res) => {
+  console.log(await Dino.find());
   res.json(await Dino.find());
 });
 
@@ -52,7 +53,7 @@ app.post("/library/:userId", async (req, res) => {
   try {
     const { user } = await libraryStorage(req.body.userId);
     console.log(user);
-    res.json({ user, src: req.params.userId });
+    res.json({ user });
   } catch (err) {
     res.status(404).json({ msg: "Unable to find file" });
   }
