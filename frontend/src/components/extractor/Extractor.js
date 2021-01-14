@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import CardDeck from "react-bootstrap/CardDeck";
 import Card from "react-bootstrap/Card";
 import Links from "../navigation/Links";
-import "./dinoNames";
+// import "./dinoNames";
 // import dinoNames from "./dinoNames";
 import Form from "react-bootstrap/Form";
 

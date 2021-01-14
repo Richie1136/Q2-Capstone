@@ -15,7 +15,7 @@ export default function ValidateEmailInfo(values) {
   }
   if (!values.email2) {
     errors.email2 = "Email required";
-  } else if (values.email2 != values.email) {
+  } else if (values.email2 !== values.email) {
     errors.email2 = "Email do not match";
   }
   return errors;

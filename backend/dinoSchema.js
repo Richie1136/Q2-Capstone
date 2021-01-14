@@ -1,15 +1,17 @@
-export const dinoSchema = new mongoose.Schema({
-  health: number,
-  stamina: number,
-  oxygen: number,
-  food: number,
-  weight: number,
-  melee: number,
-  speed: number,
-  torpor: number,
-  imprint: number,
+import mongoose from "mongoose";
+
+const dinoSchema = new mongoose.Schema({
+  health: Number,
+  stamina: Number,
+  oxygen: Number,
+  food: Number,
+  weight: Number,
+  melee: Number,
+  speed: Number,
+  torpor: Number,
+  imprint: Number,
   Gender: String,
   Status: String,
 });
 
-let Dino = mongoose.model("Dino", dinoSchema);
+export let Dino = mongoose.model("Dino", dinoSchema);
