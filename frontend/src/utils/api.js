@@ -6,7 +6,6 @@ export const addTolibrary = async (data) => {
   axios.post(`${url}/library`, data);
 };
 
-<<<<<<< HEAD
 export const uploadTolibrary = async () => {
   try {
     const { data } = await axios.get(`${url}/library`);
@@ -26,16 +25,12 @@ export const libraryStorage = () => {
       console.log(err);
     });
 };
-=======
+
 // export const uploadTolibrary = async () => {
 //   const { data } = await axios.get(`${url}/library`, {});
 
 // };
-<<<<<<< HEAD
->>>>>>> fe4858d... Organized file structure and cleared up errors in console
-=======
->>>>>>> d4561de... Fixed merge conflict on my end
->>>>>>> 5be2563... Was behind in commits
+
 // const axiosInstance = axios.create({
 //   baseURL: api_baseURL,
 // });
