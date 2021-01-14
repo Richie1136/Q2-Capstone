@@ -23,6 +23,7 @@ export const libraryStorage = () => {
 
 // };
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 <<<<<<< HEAD
@@ -31,6 +32,9 @@ export const libraryStorage = () => {
 >>>>>>> d4561de... Fixed merge conflict on my end
 >>>>>>> 5be2563... Was behind in commits
 >>>>>>> 6d62491... Fixing merge conflict issue
+=======
+
+>>>>>>> 629723c... Update api.js
 // const axiosInstance = axios.create({
 //   baseURL: api_baseURL,
 // });
