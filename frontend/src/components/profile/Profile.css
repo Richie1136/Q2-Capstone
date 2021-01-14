@@ -1,8 +1,13 @@
 .avatar {
   display: flex;
   justify-content: center;
+<<<<<<< HEAD
   margin-right: 790px;
   margin-top: 10px;
+=======
+  margin-top: -10px;
+  margin-right: 790px;
+>>>>>>> master
 }
 
 .images {
@@ -20,5 +25,9 @@
 .ProfilePic {
   display: flex;
   margin-right: 800px;
+<<<<<<< HEAD
   margin-top: 5px;
+=======
+  margin-top: 50px;
+>>>>>>> master
 }

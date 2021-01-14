@@ -17,6 +17,7 @@ export const uploadTolibrary = async () => {
 export const libraryStorage = () => {
   fetch("");
 };
+<<<<<<< HEAD
 
 // export const uploadTolibrary = async () => {
 //   const { data } = await axios.get(`${url}/library`, {});
@@ -35,6 +36,8 @@ export const libraryStorage = () => {
 =======
 
 >>>>>>> 629723c... Update api.js
+=======
+>>>>>>> master
 // const axiosInstance = axios.create({
 //   baseURL: api_baseURL,
 // });
