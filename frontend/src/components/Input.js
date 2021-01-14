@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-
 import CardDeck from "react-bootstrap/CardDeck";
 import Card from "react-bootstrap/Card";
 import Links from "../components/navigation/Links";
+import { addTolibrary, uploadTolibrary } from "../utils/api";
 
 const Input = () => {
   const [health, setHealth] = useState(0);
@@ -14,6 +14,10 @@ const Input = () => {
   const [movementSpeed, setMovementSpeed] = useState(0);
   const [torpidity, setTorpidity] = useState(0);
   const [imprinting, setImpriniting] = useState(0);
+  // const [stats, setStats] = useState([]);
+  // const [selectedFile, setSelectedFile] = useState(null);
+  // const [uploadStatus, setUploadStatus] = useState(null);
+  // const [fetchStatusError, setFetchStatusError] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,6 +32,33 @@ const Input = () => {
       torpidity,
       imprinting,
     };
+    addTolibrary(stats);
+    uploadTolibrary(stats);
+
+    // useEffect(() => {
+    //   async function getStats() {
+    //     setStats(await fetchStats());
+    //   }
+    //   getStats();
+    // }, []);
+
+    // const submitLibrary = async (event) => {
+    //   try {
+    //     event.preventDefault();
+    //     await uploadTolibrary(stats);
+    //     setUploadStatus("Success!");
+    //   } catch {
+    //     setUploadStatus("Unable to upload Stats");
+    //   } finally {
+    //     setTimeout(() => {
+    //       setUploadStatus(null);
+    //     }, 3000);
+    //   }
+    // };
+
+    // const onSelectFile = (event) => {
+    //   setSelectedFile(event.target.files[0]);
+    // };
   };
 
   return (
