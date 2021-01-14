@@ -5,12 +5,12 @@ import Home from "../../screens/Home";
 import Dashboard from "../../screens/Dashboard";
 import NotFound from "../../screens/NotFound";
 import Input from "../Input";
-import Profile from "../../screens/Profile";
+import Profile from "../../components/profile/Profile";
 import Library from "../library/Library";
 import Extractor from "../extractor/Extractor";
-import Settings from "../../screens/Settings";
-import './Navigation.css'
-import DinoCard from '../dinocard/DinoCard'
+import Settings from "../../components/profile/settings/Settings";
+import "./Navigation.css";
+import DinoCard from "../dinocard/DinoCard";
 
 export default function Navigation() {
   return (

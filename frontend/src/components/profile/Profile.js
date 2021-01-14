@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Links from "../components/navigation/Links";
-import Settings from "./Settings";
-import './Profile.css'
-
+import Links from "../navigation/Links";
+import Settings from "../profile/settings/Settings";
+import "./Profile.css";
 
 const Profile = ({ onFormSubmit }) => {
   const [picture, setPicture] = useState(null);
   const [imgData, setImgData] = useState(null);
-  const [enabled, setEnabled] = useState(false)
-  const [tribeName, SetTribeName] = useState('')
+  const [enabled, setEnabled] = useState(false);
+  const [tribeName, SetTribeName] = useState("");
 
   const onInputChange = (event) => {
-    SetTribeName(event.value.target)
+    SetTribeName(event.value.target);
   };
-
 
   const onChangePicture = (event) => {
     if (event.target.files[0]) {
@@ -26,7 +24,7 @@ const Profile = ({ onFormSubmit }) => {
       });
       reader.readAsDataURL(event.target.files[0]);
     }
-  }
+  };
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -45,7 +43,7 @@ const Profile = ({ onFormSubmit }) => {
     if (tribeName.length === 0) {
       setEnabled(false);
     } else {
-      setEnabled(true)
+      setEnabled(true);
     }
   }, [tribeName]);
 
@@ -65,28 +63,27 @@ const Profile = ({ onFormSubmit }) => {
             // onChange={(event) => setFiles(event.target.value)}
             onChange={onChangePicture}
           />
+<<<<<<< HEAD:frontend/src/screens/Profile.js
           <button className="submit" type="submit">Upload</button>
           <div className="previewProfilePic">
           </div>
+=======
+          <button type="submit">Upload</button>
+          <div className="previewProfilePic"></div>
+>>>>>>> fe4858d... Organized file structure and cleared up errors in console:frontend/src/components/profile/Profile.js
         </div>
         <br />
         <h1>Enter Tribe Name</h1>
-        <div onSubmit={onFormSubmit} >
-          <input
-            type="text"
-            value={tribeName}
-            onChange={(event) => SetTribeName(event.target.value)}
-          />
+        <div onSubmit={onFormSubmit}>
+          <input type="text" value={tribeName} onChange={(event) => SetTribeName(event.target.value)} />
         </div>
-        {
-          enabled ? (
-            <button type="submit">Submit</button>
-          ) : (
-
-              <button disabled type="submit">
-                Submit
-              </button>
-            )}
+        {enabled ? (
+          <button type="submit">Submit</button>
+        ) : (
+          <button disabled type="submit">
+            Submit
+          </button>
+        )}
       </form>
       <Settings />
     </>

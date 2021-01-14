@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CardDeck from "react-bootstrap/CardDeck";
 import Card from "react-bootstrap/Card";
 import Links from "../components/navigation/Links";
-import { addTolibrary, uploadTolibrary } from "../utils/api";
+import { addTolibrary } from "../utils/api";
 
 const Input = () => {
   const [health, setHealth] = useState(0);
@@ -33,7 +33,7 @@ const Input = () => {
       imprinting,
     };
     addTolibrary(stats);
-    uploadTolibrary(stats);
+    // uploadTolibrary(stats);
 
     // useEffect(() => {
     //   async function getStats() {
@@ -78,7 +78,6 @@ const Input = () => {
                 <input
                   className="stat"
                   type="number"
-                  pattern="true"
                   min="1"
                   value={health}
                   onChange={(e) => setHealth(e.target.value)}
@@ -87,7 +86,6 @@ const Input = () => {
                 <input
                   className="stat"
                   type="number"
-                  pattern="true"
                   min="1"
                   value={stamina}
                   onChange={(e) => setStamina(e.target.value)}
@@ -97,27 +95,18 @@ const Input = () => {
                 <input
                   className="stat"
                   type="number"
-                  pattern="true"
                   min="1"
                   value={oxygen}
                   onChange={(e) => setOxygen(e.target.value)}
                 />
 
                 <Card.Title>Food</Card.Title>
-                <input
-                  className="stat"
-                  type="number"
-                  pattern="true"
-                  min="1"
-                  value={food}
-                  onChange={(e) => setFood(e.target.value)}
-                />
+                <input className="stat" type="number" min="1" value={food} onChange={(e) => setFood(e.target.value)} />
 
                 <Card.Title>Weight</Card.Title>
                 <input
                   className="stat"
                   type="number"
-                  pattern="true"
                   min="1"
                   value={weight}
                   onChange={(e) => setWeight(e.target.value)}
@@ -127,7 +116,6 @@ const Input = () => {
                 <input
                   className="stat"
                   type="number"
-                  pattern="true"
                   min="1"
                   value={meleeDamage}
                   onChange={(e) => setMeleeDamage(e.target.value)}
@@ -137,7 +125,6 @@ const Input = () => {
                 <input
                   className="stat"
                   type="number"
-                  pattern="true"
                   min="1"
                   value={movementSpeed}
                   onChange={(e) => setMovementSpeed(e.target.value)}
@@ -147,7 +134,6 @@ const Input = () => {
                 <input
                   className="stat"
                   type="number"
-                  pattern="true"
                   min="1"
                   value={torpidity}
                   onChange={(e) => setTorpidity(e.target.value)}
@@ -157,7 +143,6 @@ const Input = () => {
                 <input
                   className="stat"
                   type="number"
-                  pattern="true"
                   min="1"
                   value={imprinting}
                   onChange={(e) => setImpriniting(e.target.value)}
