@@ -5,6 +5,7 @@ import Links from "../components/navigation/Links";
 import { addTolibrary } from "../utils/api";
 
 const Input = () => {
+  const [name, setName] = useState("");
   const [health, setHealth] = useState(0);
   const [stamina, setStamina] = useState(0);
   const [oxygen, setOxygen] = useState(0);
@@ -14,6 +15,7 @@ const Input = () => {
   const [movementSpeed, setMovementSpeed] = useState(0);
   const [torpidity, setTorpidity] = useState(0);
   const [imprinting, setImpriniting] = useState(0);
+
   // const [stats, setStats] = useState([]);
   // const [selectedFile, setSelectedFile] = useState(null);
   // const [uploadStatus, setUploadStatus] = useState(null);
@@ -22,6 +24,7 @@ const Input = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let stats = {
+      name,
       health,
       stamina,
       oxygen,
@@ -74,6 +77,10 @@ const Input = () => {
                   <b>Enter stats</b>
                 </Card.Title>
                 <br></br>
+                <Card.Title>
+                  <b>Name</b>
+                </Card.Title>
+                <input className="name" type="string" value={name} required onChange={(e) => setName(e.target.value)} />
                 <Card.Title> Health</Card.Title>
                 <input
                   className="stat"
