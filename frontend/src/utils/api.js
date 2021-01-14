@@ -7,8 +7,23 @@ export const addTolibrary = async (data) => {
 };
 
 export const uploadTolibrary = async () => {
-  const { data } = await axios.get(`${url}/library`, {});
-  console.log(data);
+  try {
+    const { data } = await axios.get(`${url}/library`);
+  } catch (err) {
+    console.log("failed");
+  }
+};
+
+export const libraryStorage = () => {
+  axios
+    .get(`${url}/library`)
+    .then((res) => {
+      console.log(res.data.id);
+      console.log(res.data.title);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
 // const axiosInstance = axios.create({
 //   baseURL: api_baseURL,
