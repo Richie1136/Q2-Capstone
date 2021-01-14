@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import CardDeck from "react-bootstrap/CardDeck";
 import Card from "react-bootstrap/Card";
 import Links from "../navigation/Links";
+import { addTolibrary } from "../../utils/api";
 // import "./dinoNames";
 // import dinoNames from "./dinoNames";
 import Form from "react-bootstrap/Form";
@@ -16,25 +17,39 @@ const Input = () => {
   const [weight, setWeight] = useState(0);
   const [meleeDamage, setMeleeDamage] = useState(0);
   const [movementSpeed, setMovementSpeed] = useState(0);
-  const [torpidity, setTorpidity] = useState(0);
+  const [torpor, setTorpor] = useState(0);
   const [imprinting, setImpriniting] = useState(0);
   const [name, setName] = useState("");
   const [tribeName, setTribeName] = useState("");
   const [server, setServer] = useState(0);
   const [owner, setOwner] = useState("");
   const [id, setId] = useState(0);
+  const [creatureType, setCreatureType] = useState("");
+  const [gender, setGender] = useState("");
+  const [status, setStatus] = useState("");
+  const [] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(health);
-    console.log(stamina);
-    console.log(oxygen);
-    console.log(food);
-    console.log(weight);
-    console.log(meleeDamage);
-    console.log(movementSpeed);
-    console.log(torpidity);
-    console.log(imprinting);
+    let stats = {
+      creatureType,
+      name,
+      health,
+      stamina,
+      oxygen,
+      food,
+      weight,
+      meleeDamage,
+      movementSpeed,
+      torpor,
+      imprinting,
+      gender,
+      status,
+      server,
+      owner,
+      id,
+    };
+    addTolibrary(stats);
   };
 
   return (
@@ -62,6 +77,7 @@ const Input = () => {
                         <option value="Stegosaurus">Stegosaurus</option>
                         <option value="Tusoteuthis">Tusoteuthis</option>
                         <option value="Yutyrannus">Yutyrannus</option>
+                        {/* onChange={(e) => setCreatureType(e.target.value)} */}
                       </Form.Control>
                     </Form.Group>
                     {" "}
@@ -140,13 +156,13 @@ const Input = () => {
                     />
                   </div>
                   <div className="torporRow">
-                    <Card.Title>Torpidity</Card.Title>
+                    <Card.Title>torpor</Card.Title>
                     <input
                       className="stat"
                       type="number"
                       min="1"
-                      value={torpidity}
-                      onChange={(e) => setTorpidity(e.target.value)}
+                      value={torpor}
+                      onChange={(e) => setTorpor(e.target.value)}
                     />
                   </div>
                   <div className="imprintRow">
@@ -196,6 +212,7 @@ const Input = () => {
                         <option value="Female">Female</option>
                         <option value="Spayed">Spayed</option>
                         <option value="Neutered">Neutered</option>
+                        {/* onChange={(e) => setGender(e.target.value)} */}
                       </Form.Control>
                     </Form.Group>
                     <Form.Group controlId="Status">
@@ -205,11 +222,12 @@ const Input = () => {
                         <option value="On Timer">On Timer</option>
                         <option value="Cryopod">Cryopod</option>
                         <option value="Deceased">Deceased</option>
+                        {/* onChange={(e) => setStatus(e.target.value)} */}
                       </Form.Control>
                     </Form.Group>
                     {" "}
                     <div className="extractor-headline">
-                      <span className="stat-header">Stat</span>
+                      <span className="stat-header">Info</span>
                     </div>
                     <div className="dinoName">
                       <Card.Title>Name</Card.Title>  

@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 
 const dinoSchema = new mongoose.Schema({
+  CreatureType: String,
+  name: String,
   health: Number,
   stamina: Number,
   oxygen: Number,
@@ -10,8 +12,11 @@ const dinoSchema = new mongoose.Schema({
   speed: Number,
   torpor: Number,
   imprint: Number,
-  Gender: String,
-  Status: String,
+  gender: String,
+  status: String,
+  server: Number,
+  owner: String,
+  id: Number,
 });
 
 export let Dino = mongoose.model("Dino", dinoSchema);
