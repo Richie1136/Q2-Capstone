@@ -66,6 +66,7 @@ const Profile = ({ onFormSubmit }) => {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
           <button className="submit" type="submit">Upload</button>
           <div className="previewProfilePic">
@@ -153,6 +154,15 @@ const Profile = ({ onFormSubmit }) => {
 >>>>>>> 1a042e5... Fixing merge conflict
         </div>
 >>>>>>> 9bb32a0... Updated Profile.css
+=======
+
+          <button className="submit" type="submit">Upload</button>
+          <div className="previewProfilePic">
+          </div>
+          <button className="submit" type="submit">Upload</button>
+          <div className="previewProfilePic">
+          </div>
+>>>>>>> aab20b1... Update Profile.js
         <br />
         <h1>Enter Tribe Name</h1>
         <div onSubmit={onFormSubmit}>
@@ -167,12 +177,15 @@ const Profile = ({ onFormSubmit }) => {
           </button>
         )}
         </div>
+<<<<<<< HEAD
 =======
             <button disabled type="submit">
               Submit
             </button>
           )}
 >>>>>>> 9bb32a0... Updated Profile.css
+=======
+>>>>>>> aab20b1... Update Profile.js
       </form>
       // <Settings />
     </>
