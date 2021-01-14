@@ -53,16 +53,17 @@ const Profile = ({ onFormSubmit }) => {
       <Link to="/user/settings">Settings</Link>
       <form className="File Submit">
         <div className="image upload">
-          <label>Avatar</label>
+          <label className="avatar">Avatar</label>
           <img className="ProfilePic" src={imgData} alt="" height="180px" width="180px" />
           <input
+            className="images"
             type="file"
             accept=".jpg, .jpeg, .pdf, .png, .svg"
             // value={files}
             // onChange={(event) => setFiles(event.target.value)}
             onChange={onChangePicture}
           />
-          <button type="submit">Upload</button>
+          <button className="submit" type="submit">Upload</button>
           <div className="previewProfilePic"></div>
         </div>
         <br />
@@ -73,10 +74,10 @@ const Profile = ({ onFormSubmit }) => {
         {enabled ? (
           <button type="submit">Submit</button>
         ) : (
-          <button disabled type="submit">
-            Submit
-          </button>
-        )}
+            <button disabled type="submit">
+              Submit
+            </button>
+          )}
       </form>
       <Settings />
     </>
