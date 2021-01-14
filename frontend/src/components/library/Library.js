@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Library.css";
 import Links from "../navigation/Links";
+import DinoCard from "../dinocard/DinoCard";
 
-const URL = ""; //need to get api set up or something to get data from
+const URL = "http://localhost:3000/library"; //need to get api set up or something to get data from
 const Table = () => {
   const [dinos, setDinos] = useState([]);
   useEffect(() => {
@@ -11,6 +12,7 @@ const Table = () => {
   }, []);
   const getData = async () => {
     const response = await axios.get(URL);
+    console.log(response.data);
     setDinos(response.data);
   };
   const removeData = (id) => {
@@ -81,4 +83,3 @@ const Table = () => {
   );
 };
 export default Table;
-

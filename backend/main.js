@@ -32,24 +32,9 @@ app.get("/user", (req, res) => {
 });
 
 //not working properly
-app.get("/library", async (req, res) => {
-  console.log(req.body);
-  // try {
-  //   const datas = await uploadTolibrary();
-  //   const dinoData = data.map((data) => ({ src: `/library/${data}` }));
-  //   res.json(dinoData);
-  // } catch (err) {
-  //   res.status(404).send("unable to save");
-  // }
-});
-//  try {
-//     const files = await getUploadedFiles();
-//     const fileData = files.map((file) => ({ src: `/uploads/${file}` }));
-//     res.json(fileData);
-//   } catch (err) {
-//     res.status(500).json({ msg: err.msg });
-//   }
-// });
+// app.get("/library", async (req, res) => {
+
+// }
 
 app.post("/library", async (req, res) => {
   const myData = new Dino(req.body);
