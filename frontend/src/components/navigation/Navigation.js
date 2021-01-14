@@ -17,12 +17,12 @@ export default function Navigation() {
     <Switch>
       <ConnectedRoute exact path="/" redirectIfAuthenticated component={Home} />
       <ConnectedRoute exact isProtected path="/dashboard" component={Dashboard} />
-      <ConnectedRoute path="/user" component={Profile} />
+      <ConnectedRoute exact path="/user" component={Profile} />
       <ConnectedRoute path="/input" component={Input} />
       <ConnectedRoute path="/library" component={Library} />
       <ConnectedRoute exact path="/extractor" component={Extractor} />
       <ConnectedRoute path="/dinocard" component={DinoCard} />
-      <ConnectedRoute path="/user/settings" component={Settings} />
+      <ConnectedRoute exact path="/user/settings" component={Settings} />
       <ConnectedRoute path="*" component={NotFound} />
     </Switch>
   );

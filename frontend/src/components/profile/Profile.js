@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Links from "../navigation/Links";
 import Settings from "../profile/settings/Settings";
 import "./Profile.css";
@@ -78,7 +78,6 @@ const Profile = ({ onFormSubmit }) => {
           </button>
         )}
       </form>
-      <Settings />
     </>
   );
 };
