@@ -88,6 +88,7 @@ const Profile = ({ onFormSubmit }) => {
 >>>>>>> fe4858d... Organized file structure and cleared up errors in console:frontend/src/components/profile/Profile.js
 =======
 <<<<<<< HEAD:frontend/src/components/profile/Profile.js
+<<<<<<< HEAD:frontend/src/components/profile/Profile.js
           <button type="submit">Upload</button>
           <div className="previewProfilePic"></div>
 =======
@@ -101,12 +102,28 @@ const Profile = ({ onFormSubmit }) => {
           </div>
 >>>>>>> 2bdc2fa... Made some changes to the Profile.CSS:frontend/src/screens/Profile.js
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 758fc5c... Fixing merge issue on my end
 =======
 >>>>>>> fe4858d... Organized file structure and cleared up errors in console:frontend/src/screens/Profile.js
 =======
 >>>>>>> a8ff702... Fixing merge conflict on my end
+<<<<<<< HEAD
 >>>>>>> 412e07b... Fixing merge conflict issue
+=======
+=======
+=======
+<<<<<<< HEAD:frontend/src/screens/Profile.js
+          <button className="submit" type="submit">Upload</button>
+          <div className="previewProfilePic">
+          </div>
+=======
+          <button type="submit">Upload</button>
+          <div className="previewProfilePic"></div>
+>>>>>>> fe4858d... Organized file structure and cleared up errors in console:frontend/src/components/profile/Profile.js
+>>>>>>> d4561de... Fixed merge conflict on my end:frontend/src/screens/Profile.js
+>>>>>>> 5be2563... Was behind in commits
+>>>>>>> 6d62491... Fixing merge conflict issue
         </div>
 >>>>>>> 9bb32a0... Updated Profile.css
         <br />
