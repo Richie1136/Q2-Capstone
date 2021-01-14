@@ -55,7 +55,7 @@ const Input = () => {
                     <Form.Group controlId="CreatureType">
                       <Form.Label>Creature</Form.Label>  
                       <br />
-                      <Form.Control as="select" defaultValue="Choose..." required>
+                      <Form.Control as="select" defaultValue="Choose...">
                         <option>Choose...</option>
                         <option value="Giganotosaurus">Giganotosaurus</option>
                         <option value="Quetzal">Quetzal</option>
@@ -73,10 +73,8 @@ const Input = () => {
                       <input
                         className="stat"
                         type="number"
-                        require
                         min="1"
                         value={health}
-                        pattern
                         onChange={(e) => setHealth(e.target.value)}
                       />
                     </div>
@@ -86,7 +84,6 @@ const Input = () => {
                     <input
                       className="stat"
                       type="number"
-                      require
                       min="1"
                       value={stamina}
                       onChange={(e) => setStamina(e.target.value)}
@@ -97,7 +94,6 @@ const Input = () => {
                     <input
                       className="stat"
                       type="number"
-                      require
                       min="1"
                       value={oxygen}
                       onChange={(e) => setOxygen(e.target.value)}
@@ -108,7 +104,6 @@ const Input = () => {
                     <input
                       className="stat"
                       type="number"
-                      require
                       min="1"
                       value={food}
                       onChange={(e) => setFood(e.target.value)}
@@ -119,7 +114,6 @@ const Input = () => {
                     <input
                       className="stat"
                       type="number"
-                      require
                       min="1"
                       value={weight}
                       onChange={(e) => setWeight(e.target.value)}
@@ -130,7 +124,6 @@ const Input = () => {
                     <input
                       className="stat"
                       type="number"
-                      require
                       min="1"
                       value={meleeDamage}
                       onChange={(e) => setMeleeDamage(e.target.value)}
@@ -141,7 +134,6 @@ const Input = () => {
                     <input
                       className="stat"
                       type="number"
-                      require
                       min="1"
                       value={movementSpeed}
                       onChange={(e) => setMovementSpeed(e.target.value)}
@@ -152,7 +144,6 @@ const Input = () => {
                     <input
                       className="stat"
                       type="number"
-                      require
                       min="1"
                       value={torpidity}
                       onChange={(e) => setTorpidity(e.target.value)}
@@ -163,7 +154,6 @@ const Input = () => {
                     <input
                       className="stat"
                       type="number"
-                      require
                       min="1"
                       value={imprinting}
                       onChange={(e) => setImpriniting(e.target.value)}
@@ -200,7 +190,7 @@ const Input = () => {
                     <Form.Group controlId="Gender">
                       <Form.Label>Gender</Form.Label>  
                       <br />
-                      <Form.Control as="select" defaultValue="Choose..." required>
+                      <Form.Control as="select" defaultValue="Choose...">
                         <option>Choose...</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -209,7 +199,7 @@ const Input = () => {
                       </Form.Control>
                     </Form.Group>
                     <Form.Group controlId="Status">
-                      <Form.Control as="select" defaultValue="Choose..." required>
+                      <Form.Control as="select" defaultValue="Choose...">
                         <option>Choose...</option>
                         <option value="Available">Available</option>
                         <option value="On Timer">On Timer</option>
@@ -226,10 +216,8 @@ const Input = () => {
                       <input
                         className="name"
                         type="string"
-                        require
                         min="1"
                         value={name}
-                        pattern
                         onChange={(e) => setName(e.target.value)}
                       />
                     </div>

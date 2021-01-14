@@ -6,10 +6,10 @@ export const addTolibrary = async (data) => {
   axios.post(`${url}/library`, data);
 };
 
-export const uploadTolibrary = async () => {
-  const { data } = await axios.get(`${url}/library`, {});
-  return data;
-};
+// export const uploadTolibrary = async () => {
+//   const { data } = await axios.get(`${url}/library`, {});
+
+// };
 // const axiosInstance = axios.create({
 //   baseURL: api_baseURL,
 // });

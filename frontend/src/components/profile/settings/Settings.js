@@ -1,6 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
-import UpdateEmailForm from "./UpdateEmailForm";
+import UpdateEmailForm from "./email/UpdateEmailForm";
 
 Modal.setAppElement("#root");
 
