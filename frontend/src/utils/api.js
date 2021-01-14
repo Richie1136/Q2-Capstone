@@ -1,15 +1,15 @@
 import axios from "axios";
 
 const url = "http://localhost:4000";
-// "https://ark-stat-app.herokuapp.com/"; //switch url for deployment
+// "https://ark-stats.herokuapp.com/"; //switch url for deployment
 export const addTolibrary = async (data) => {
   axios.post(`${url}/library`, data);
 };
 
-// export const uploadTolibrary = async () => {
-//   const { data } = await axios.get(`${url}/library`, {});
-
-// };
+export const uploadTolibrary = async () => {
+  const { data } = await axios.get(`${url}/library`, {});
+  console.log(data);
+};
 // const axiosInstance = axios.create({
 //   baseURL: api_baseURL,
 // });
