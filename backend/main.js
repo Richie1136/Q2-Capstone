@@ -4,9 +4,11 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import { Dino } from "./dinoSchema";
 import dotenv from "dotenv";
-import { uploadTolibrary } from "../frontend/src/utils/api";
+import { libraryStorage, uploadTolibrary } from "../frontend/src/utils/api";
+import { Db } from "mongodb";
 
 dotenv.config();
+
 const app = express();
 const port = 4000;
 
@@ -16,25 +18,23 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 const { MongoClient } = require("mongodb").MongoClient;
-const uri = process.env.DB_CONNECTION;
 
+const uri = process.env.DB_CONNECTION;
 mongoose.Promise = global.Promise;
 const client = mongoose.connect(uri, { useUnifiedTopology: true, useNewUrlParser: true });
 
-//displaying message correctly
 app.get("/", (req, res) => {
   res.send("homepage");
 });
 
-//displaying specified message correctly
 app.get("/user", (req, res) => {
   res.send("profile info page");
 });
 
-//not working properly
-// app.get("/library", async (req, res) => {
-
-// }
+//generate user ID, unique key
+app.get("/library", async (req, res) => {
+  res.json(await Dino.find());
+});
 
 app.post("/library", async (req, res) => {
   const myData = new Dino(req.body);
@@ -48,7 +48,16 @@ app.post("/library", async (req, res) => {
     });
 });
 
-//not displaying for any page that isn't already specified
+app.post("/library/:userId", async (req, res) => {
+  try {
+    const { user } = await libraryStorage(req.body.userId);
+    console.log(user);
+    res.json({ user, src: req.params.userId });
+  } catch (err) {
+    res.status(404).json({ msg: "Unable to find file" });
+  }
+});
+
 app.get("*", (req, res) => {
   res.status(404).json({
     message: "Sorry, Page not found!",
@@ -58,5 +67,4 @@ app.get("*", (req, res) => {
 app.listen(4000, () => {
   console.log("Express server is now running on port 4000");
 });
-
 export {};
