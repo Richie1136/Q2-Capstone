@@ -71,6 +71,7 @@ const Profile = ({ onFormSubmit }) => {
 =======
           <button type="submit">Upload</button>
           <div className="previewProfilePic"></div>
+<<<<<<< HEAD:frontend/src/components/profile/Profile.js
 >>>>>>> fe4858d... Organized file structure and cleared up errors in console:frontend/src/components/profile/Profile.js
 =======
 <<<<<<< HEAD:frontend/src/components/profile/Profile.js
@@ -82,6 +83,8 @@ const Profile = ({ onFormSubmit }) => {
           </div>
 >>>>>>> 2bdc2fa... Made some changes to the Profile.CSS:frontend/src/screens/Profile.js
 >>>>>>> 758fc5c... Fixing merge issue on my end
+=======
+>>>>>>> fe4858d... Organized file structure and cleared up errors in console:frontend/src/screens/Profile.js
         </div>
         <br />
         <h1>Enter Tribe Name</h1>

@@ -1,24 +1,14 @@
-.avatar {
+.ProfilePic {
   display: flex;
   justify-content: center;
-  margin-right: 790px;
-  margin-top: 10px;
-}
-
-.images {
-  display: flex;
   margin-top: 20px;
 }
 
-.submit {
-  display: flex;
-  justify-content: center;
-  margin-top: -22px;
-  margin-left: 200px;
+.img {
+  color: red;
 }
 
-.ProfilePic {
+label {
   display: flex;
-  margin-right: 800px;
-  margin-top: 5px;
+  align-items: left;
 }
