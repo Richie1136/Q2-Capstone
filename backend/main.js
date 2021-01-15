@@ -40,7 +40,8 @@ app.get("/library", async (req, res) => {
 
 app.post("/library", async (req, res) => {
   const myData = new Dino(req.body);
-  myData
+  userModel.library
+    .push(myData)
     .save()
     .then((item) => {
       res.send("item saved to database");

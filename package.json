@@ -11,6 +11,7 @@
     "bootstrap": "^4.5.3",
     "react-bootstrap": "^1.4.3",
     "react-modal": "^3.12.1",
+    "redux": "^4.0.5",
     "use-magic-link": "^1.1.1"
   },
   "devDependencies": {

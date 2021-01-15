@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const dinoSchema = new mongoose.Schema({
+export const dinoSchema = new mongoose.Schema({
   level: Number,
   creatureType: String,
   name: String,

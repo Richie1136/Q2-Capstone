@@ -26,18 +26,6 @@ const Profile = ({ onFormSubmit }) => {
       reader.readAsDataURL(event.target.files[0]);
     }
   };
-  // const onSubmit = (event) => {
-  //   event.preventDefault();
-  //   // onFormSubmit(files);
-  // };
-
-  // useEffect(() => {
-  //   if (files.length === 0) {
-  //     setEnabled(false);
-  //   } else {
-  //     setEnabled(true);
-  //   }
-  // }, [files]);
 
   useEffect(() => {
     if (tribeName.length === 0) {

@@ -1,6 +1,7 @@
 .avatar {
   display: flex;
   justify-content: center;
+  padding: 10px;
   margin-right: 1000px;
   margin-top: 40px;
 }
