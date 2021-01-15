@@ -6,7 +6,7 @@ import { Dino } from "./dinoSchema";
 import { userModel } from "./UserSchema";
 import dotenv from "dotenv";
 import { libraryStorage } from "../frontend/src/utils/api";
-import { Db } from "mongodb";
+import mongodb, { Db } from "mongodb";
 
 dotenv.config();
 
@@ -26,6 +26,24 @@ const client = mongoose.connect(uri, { useUnifiedTopology: true, useNewUrlParser
 
 app.get("/", (req, res) => {
   res.send("homepage");
+});
+
+app.post("/signup", (req, res) => {
+  const myData = new userModel(req.body);
+  myData
+    .save()
+    .then((item) => {
+      res.send("item saved to database");
+    })
+    .catch((err) => {
+      res.status(400).send("unable to save to database");
+    });
+});
+
+app.get("/login/:email", async (req, res) => {
+  const doc = await userModel.findOne({ email: req.params.email });
+  console.log(doc.id);
+  res.send(doc.id);
 });
 
 app.get("/user", (req, res) => {

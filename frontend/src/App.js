@@ -8,6 +8,7 @@ import { useDarkMode } from "./components/useDarkMode";
 import Toggle from "./components/Toggler";
 // import Profile from "../src/screens/Profile";
 import logo from "../src/assets/stegorock.gif";
+import { signUp, logIn } from "./store/actions/users";
 
 function App() {
   const auth = useAuth();
@@ -18,10 +19,28 @@ function App() {
 
   if (!mountedComponent) return <div />;
 
-  // Please dont do this
-  async function loginNow() {
+  async function signUpNow() {
     try {
       const email = prompt("Enter your email");
+      await signUp(email);
+      loginNow(email);
+    } catch (err) {
+      console.error(err);
+      // maybe updat some sort of state to let the user know that it failed =]
+    }
+  }
+
+  const handleLogIn = (e) => {
+    e.preventDefault();
+    loginNow();
+  };
+  // Please dont do this
+  async function loginNow(email) {
+    try {
+      if (!email) {
+        email = prompt("Enter your email");
+      }
+      await logIn(email);
       await auth.login(email);
     } catch (err) {
       console.error(err);
@@ -40,7 +59,6 @@ function App() {
         <GlobalStyles />
         <div className="App">
           <Toggle theme={theme} toggleTheme={themeToggler} /> <Navigation />
-          {/* <Links /> */}
           {auth.loggedIn ? (
             <div>
               You are logged-in.
@@ -48,9 +66,14 @@ function App() {
               <button onClick={() => auth.logout()}>Logout</button>
             </div>
           ) : (
-            <div>
-              <button onClick={loginNow}>Login Now</button>
-            </div>
+            <>
+              <div>
+                <button onClick={signUpNow}>Sign Up</button>
+              </div>
+              <div>
+                <button onClick={handleLogIn}>Login</button>
+              </div>
+            </>
           )}
         </div>
       </>

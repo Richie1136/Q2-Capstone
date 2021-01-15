@@ -4,6 +4,7 @@ import { dinoSchema } from "./dinoSchema";
 
 const userSchema = new mongoose.Schema({
   library: [dinoSchema],
+  id: String,
   name: String,
   tribeName: String,
   email: String,
