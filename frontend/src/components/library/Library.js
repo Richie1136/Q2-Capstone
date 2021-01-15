@@ -44,29 +44,44 @@ const Table = () => {
   const renderBody = () => {
     return (
       dinos &&
-      dinos.map(({ id, name, gender, health, stamina, oxygen, food, weight, melee, speed, torpor, imprint }) => {
-        return (
-          <tr key={id}>
-            <td>{id}</td>
-            <td>{name}</td>
-            <td>{gender}</td>
-            <td>{health}</td>
-            <td>{stamina}</td>
-            <td>{oxygen}</td>
-            <td>{food}</td>
-            <td>{weight}</td>
-            <td>{melee}</td>
-            <td>{speed}</td>
-            <td>{torpor}</td>
-            <td>{imprint}</td>
-            <td className="remove">
-              <button className="button" onClick={() => removeData(id)}>
-                Delete
-              </button>
-            </td>
-          </tr>
-        );
-      })
+      dinos.map(
+        ({
+          id,
+          name,
+          gender,
+          health,
+          stamina,
+          oxygen,
+          food,
+          weight,
+          meleeDamage,
+          movementSpeed,
+          torpidity,
+          imprinting,
+        }) => {
+          return (
+            <tr key={id}>
+              <td>{id}</td>
+              <td>{name}</td>
+              <td>{gender}</td>
+              <td>{health}</td>
+              <td>{stamina}</td>
+              <td>{oxygen}</td>
+              <td>{food}</td>
+              <td>{weight}</td>
+              <td>{meleeDamage}</td>
+              <td>{movementSpeed}</td>
+              <td>{torpidity}</td>
+              <td>{imprinting}</td>
+              <td className="remove">
+                <button className="button" onClick={() => removeData(id)}>
+                  Delete
+                </button>
+              </td>
+            </tr>
+          );
+        },
+      )
     );
   };
   return (
