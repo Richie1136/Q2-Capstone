@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navigation.css";
+import "./Links.css";
 
 export default function Links(props) {
   return (
