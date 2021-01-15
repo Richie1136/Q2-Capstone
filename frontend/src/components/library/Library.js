@@ -17,6 +17,7 @@ const Table = () => {
     axios.delete(`${URL}/${id}`).then((res) => {
       const del = dinos.filter((dino) => id !== dino.id);
       setDinos(del);
+      console.log("res", res);
     });
   };
   const renderHeader = () => {
