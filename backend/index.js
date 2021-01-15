@@ -1,4 +1,4 @@
 const { Mongoose } = require("mongoose");
 
 require = require("esm")(module);
-module.exports = require("./main.js");
+module.exports = require("./main.js").default;

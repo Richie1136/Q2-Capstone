@@ -13,8 +13,14 @@
     "react-modal": "^3.12.1",
     "use-magic-link": "^1.1.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "vercel": "^21.1.0"
+  },
   "scripts": {
+    "vercel": "vercel dev",
+    "dev": "concurrently \"nodemon --watch api\"",
+    "build": "react-scripts build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
