@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   margin-right: 1000px;
-  margin-top: 10px;
+  margin-top: 40px;
 }
 
 .images {
@@ -21,7 +21,7 @@
 .ProfilePic {
   display: flex;
   margin-right: 1000px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .Tribe {
@@ -31,9 +31,24 @@
 }
 
 .links {
-  display: flex;
-  margin: auto;
-  justify-content: space-around;
-  padding: 10px;
-  white-space: nowrap;
+  display: inline-flex;
+  text-align: center;
+  margin: 20px 0 0;
+  justify-content: space-evenly;
+  padding: 10px 0;
 }
+
+/* a {
+  display: flex;
+  position: absolute;
+  top: 40px;
+  margin: auto;
+  padding: 8px;
+  justify-content: space-evenly;
+} */
+
+/* .links {
+  text-align: center;
+  margin: 20px 0 0;
+  padding: 10px 0;
+} */
