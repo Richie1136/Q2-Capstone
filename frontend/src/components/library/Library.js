@@ -14,8 +14,8 @@ const Table = () => {
     setDinos(response.data);
   };
   const removeData = (id) => {
-    axios.delete(`${URL}/${id}`).then((res) => {
-      const del = dinos.filter((dino) => id !== dino.id);
+    axios.delete(`${URL}/dinos/${id}`).then((res) => {
+      const del = dinos.filter((dino) => id !== dino._id);
       setDinos(del);
       console.log("res", res);
     });
@@ -82,7 +82,7 @@ const Table = () => {
               <td>{torpidity}</td>
               <td>{imprinting}</td>
               <td className="remove">
-                <button className="button" onClick={() => removeData(id)}>
+                <button id="button" onClick={() => removeData(id)}>
                   Delete
                 </button>
               </td>
