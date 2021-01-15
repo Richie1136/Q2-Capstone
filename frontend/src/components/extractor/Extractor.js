@@ -4,12 +4,14 @@ import CardDeck from "react-bootstrap/CardDeck";
 import Card from "react-bootstrap/Card";
 import Links from "../navigation/Links";
 import { addTolibrary } from "../../utils/api";
-// import "./dinoNames";
-// import dinoNames from "./dinoNames";
 import Form from "react-bootstrap/Form";
-
 const Input = () => {
-  // const [stats, setStat] = useState([]);
+  const [id, setId] = useState(0);
+  const [creatureType, setCreatureType] = useState("");
+  const [level, setLevel] = useState(0);
+  const [status, setStatus] = useState("");
+  const [name, setName] = useState("");
+  const [gender, setGender] = useState("");
   const [health, setHealth] = useState(0);
   const [stamina, setStamina] = useState(0);
   const [oxygen, setOxygen] = useState(0);
@@ -19,19 +21,14 @@ const Input = () => {
   const [movementSpeed, setMovementSpeed] = useState(0);
   const [torpor, setTorpor] = useState(0);
   const [imprinting, setImpriniting] = useState(0);
-  const [name, setName] = useState("");
   const [tribeName, setTribeName] = useState("");
   const [server, setServer] = useState(0);
   const [owner, setOwner] = useState("");
-  const [id, setId] = useState(0);
-  const [creatureType, setCreatureType] = useState("");
-  const [gender, setGender] = useState("");
-  const [status, setStatus] = useState("");
-  const [] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     let stats = {
+      level,
       creatureType,
       name,
       health,
@@ -51,7 +48,6 @@ const Input = () => {
     };
     addTolibrary(stats);
   };
-
   return (
     <>
       <Links />
@@ -63,124 +59,130 @@ const Input = () => {
                 <div className="double-column">
                   <div className="field">
                     <br></br>
-                    <Card.Title>
-                      <b>Enter stats</b>
-                    </Card.Title>
-                    <br></br>
-                    <Form.Group controlId="CreatureType">
-                      <Form.Label>Creature</Form.Label>  
-                      <br />
-                      <Form.Control as="select" defaultValue="Choose...">
-                        <option>Choose...</option>
-                        <option value="Giganotosaurus">Giganotosaurus</option>
-                        <option value="Quetzal">Quetzal</option>
-                        <option value="Stegosaurus">Stegosaurus</option>
-                        <option value="Tusoteuthis">Tusoteuthis</option>
-                        <option value="Yutyrannus">Yutyrannus</option>
-                        {/* onChange={(e) => setCreatureType(e.target.value)} */}
-                      </Form.Control>
-                    </Form.Group>
-                    {" "}
-                    <div className="extractor-headline">
-                      <span className="stat-header">Stat</span>
-                    </div>
-                    <div className="healthRow">
-                      <Card.Title>Health</Card.Title>  
-                      <input
-                        className="stat"
-                        type="number"
-                        min="1"
-                        value={health}
-                        onChange={(e) => setHealth(e.target.value)}
-                      />
-                    </div>
                   </div>
-                  <div className="staminaRow">
-                    <Card.Title>Stamina</Card.Title>
+                  <Form.Group controlId="CreatureType">
+                    <Form.Label>Creature</Form.Label>
+                    <br />
+                    <Form.Control onChange={(e) => setCreatureType(e.target.value)} value={creatureType} as="select">
+                      <option>Choose...</option>
+                      <option value="Giganotosaurus">Giganotosaurus</option>
+                      <option value="Quetzal">Quetzal</option>
+                      <option value="Stegosaurus">Stegosaurus</option>
+                      <option value="Tusoteuthis">Tusoteuthis</option>
+                      <option value="Yutyrannus">Yutyrannus</option>
+                    </Form.Control>
+                  </Form.Group>
+                  <div className="extractor-headline">
+                    <span className="stat-header">Stat</span>
+                  </div>
+                  <div className="levelRow">
+                    <Card.Title>Level</Card.Title>
+                    <input
+                      className="level"
+                      type="number"
+                      min="1"
+                      max="500"
+                      value={level}
+                      onChange={(e) => setLevel(e.target.value)}
+                    />
+                  </div>
+                  <div className="healthRow">
+                    <Card.Title>Health</Card.Title>
                     <input
                       className="stat"
                       type="number"
                       min="1"
-                      value={stamina}
-                      onChange={(e) => setStamina(e.target.value)}
+                      value={health}
+                      onChange={(e) => setHealth(e.target.value)}
                     />
                   </div>
-                  <div className="oxygenRow">
-                    <Card.Title>Oxygen</Card.Title>
-                    <input
-                      className="stat"
-                      type="number"
-                      min="1"
-                      value={oxygen}
-                      onChange={(e) => setOxygen(e.target.value)}
-                    />
-                  </div>
-                  <div className="foodRow">
-                    <Card.Title>Food</Card.Title>
-                    <input
-                      className="stat"
-                      type="number"
-                      min="1"
-                      value={food}
-                      onChange={(e) => setFood(e.target.value)}
-                    />
-                  </div>
-                  <div className="weightRow">
-                    <Card.Title>Weight</Card.Title>
-                    <input
-                      className="stat"
-                      type="number"
-                      min="1"
-                      value={weight}
-                      onChange={(e) => setWeight(e.target.value)}
-                    />
-                  </div>
-                  <div className="meleeRow">
-                    <Card.Title>Melee Damage</Card.Title>
-                    <input
-                      className="stat"
-                      type="number"
-                      min="1"
-                      value={meleeDamage}
-                      onChange={(e) => setMeleeDamage(e.target.value)}
-                    />
-                  </div>
-                  <div className="speedRow">
-                    <Card.Title>Movement Speed</Card.Title>
-                    <input
-                      className="stat"
-                      type="number"
-                      min="1"
-                      value={movementSpeed}
-                      onChange={(e) => setMovementSpeed(e.target.value)}
-                    />
-                  </div>
-                  <div className="torporRow">
-                    <Card.Title>torpor</Card.Title>
-                    <input
-                      className="stat"
-                      type="number"
-                      min="1"
-                      value={torpor}
-                      onChange={(e) => setTorpor(e.target.value)}
-                    />
-                  </div>
-                  <div className="imprintRow">
-                    <Card.Title>Imprinting</Card.Title>
-                    <input
-                      className="stat"
-                      type="number"
-                      min="1"
-                      value={imprinting}
-                      onChange={(e) => setImpriniting(e.target.value)}
-                    />
-                  </div>
-                  <br></br>
-                  <br></br>
-                  <button className="input-button" type="submit" value="Submit">
-                    Submit
-                  </button>
                 </div>
+                <div className="staminaRow">
+                  <Card.Title>Stamina</Card.Title>
+                  <input
+                    className="stat"
+                    type="number"
+                    min="1"
+                    value={stamina}
+                    onChange={(e) => setStamina(e.target.value)}
+                  />
+                </div>
+                <div className="oxygenRow">
+                  <Card.Title>Oxygen</Card.Title>
+                  <input
+                    className="stat"
+                    type="number"
+                    min="1"
+                    value={oxygen}
+                    onChange={(e) => setOxygen(e.target.value)}
+                  />
+                </div>
+                <div className="foodRow">
+                  <Card.Title>Food</Card.Title>
+                  <input
+                    className="stat"
+                    type="number"
+                    min="1"
+                    value={food}
+                    onChange={(e) => setFood(e.target.value)}
+                  />
+                </div>
+                <div className="weightRow">
+                  <Card.Title>Weight</Card.Title>
+                  <input
+                    className="stat"
+                    type="number"
+                    min="1"
+                    value={weight}
+                    onChange={(e) => setWeight(e.target.value)}
+                  />
+                </div>
+                <div className="meleeRow">
+                  <Card.Title>Melee Damage</Card.Title>
+                  <input
+                    className="stat"
+                    type="number"
+                    min="1"
+                    value={meleeDamage}
+                    onChange={(e) => setMeleeDamage(e.target.value)}
+                  />
+                </div>
+                <div className="speedRow">
+                  <Card.Title>Movement Speed</Card.Title>
+                  <input
+                    className="stat"
+                    type="number"
+                    min="1"
+                    value={movementSpeed}
+                    onChange={(e) => setMovementSpeed(e.target.value)}
+                  />
+                </div>
+                <div className="torporRow">
+                  <Card.Title>torpor</Card.Title>
+                  <input
+                    className="stat"
+                    type="number"
+                    min="1"
+                    value={torpor}
+                    onChange={(e) => setTorpor(e.target.value)}
+                  />
+                </div>
+                <div className="imprintRow">
+                  <Card.Title>Imprinting</Card.Title>
+                  <input
+                    className="stat"
+                    type="number"
+                    min="1"
+                    max="100"
+                    value={imprinting}
+                    onChange={(e) => setImpriniting(e.target.value)}
+                  />
+                </div>
+                <br></br>
+                <br></br>
+                <button className="input-button" type="submit" value="Submit">
+                  Submit
+                </button>
               </div>
             </form>
           </Card>
@@ -192,7 +194,7 @@ const Input = () => {
         <br />
         <CardDeck className="stat-output">
           <br />
-          Breed Value<Card.Title></Card.Title>
+          Breed Value<Card.Title></Card.Title>
         </CardDeck>
         <CardDeck className="input">
           <Card className="stat-input">
@@ -204,33 +206,34 @@ const Input = () => {
                     <Card.Title></Card.Title>
                     <br></br>
                     <Form.Group controlId="Gender">
-                      <Form.Label>Gender</Form.Label>  
+                      <Form.Label>Gender</Form.Label>
                       <br />
-                      <Form.Control as="select" defaultValue="Choose...">
-                        <option>Choose...</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Spayed">Spayed</option>
-                        <option value="Neutered">Neutered</option>
-                        {/* onChange={(e) => setGender(e.target.value)} */}
-                      </Form.Control>
+                      <Form.Group>
+                        <Form.Label>Gender</Form.Label>
+                        <Form.Control onChange={(e) => setGender(e.target.value)} value={gender} as="select">
+                          <option>Choose...</option>
+                          <option value="Male">Male</option>
+                          <option value="Female">Female</option>
+                          <option value="Spayed">Spayed</option>
+                          <option value="Neutered">Neutered</option>
+                        </Form.Control>
+                      </Form.Group>
                     </Form.Group>
                     <Form.Group controlId="Status">
-                      <Form.Control as="select" defaultValue="Choose...">
+                      <Form.Label>Status</Form.Label>
+                      <Form.Control onChange={(e) => setStatus(e.target.value)} value={status} as="select">
                         <option>Choose...</option>
                         <option value="Available">Available</option>
                         <option value="On Timer">On Timer</option>
                         <option value="Cryopod">Cryopod</option>
                         <option value="Deceased">Deceased</option>
-                        {/* onChange={(e) => setStatus(e.target.value)} */}
                       </Form.Control>
                     </Form.Group>
-                    {" "}
                     <div className="extractor-headline">
                       <span className="stat-header">Info</span>
                     </div>
                     <div className="dinoName">
-                      <Card.Title>Name</Card.Title>  
+                      <Card.Title>Name</Card.Title>
                       <input
                         className="name"
                         type="string"
@@ -288,5 +291,4 @@ const Input = () => {
     </>
   );
 };
-
 export default Input;

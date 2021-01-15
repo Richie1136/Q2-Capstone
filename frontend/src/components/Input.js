@@ -4,7 +4,6 @@ import Card from "react-bootstrap/Card";
 import Links from "../components/navigation/Links";
 import { addTolibrary } from "../utils/api";
 import Form from "react-bootstrap/Form";
-
 const Input = () => {
   const [id, setId] = useState(0);
   const [name, setName] = useState("");
@@ -17,17 +16,18 @@ const Input = () => {
   const [movementSpeed, setMovementSpeed] = useState(0);
   const [torpidity, setTorpidity] = useState(0);
   const [imprinting, setImprinting] = useState(0);
-
-  // const [stats, setStats] = useState([]);
-  // const [selectedFile, setSelectedFile] = useState(null);
-  // const [uploadStatus, setUploadStatus] = useState(null);
-  // const [fetchStatusError, setFetchStatusError] = useState(null);
-
+  const [gender, setGender] = useState("Choose...");
+  const [creatureType, setCreatureType] = useState("Choose...");
+  const [status, setStatus] = useState("Choose...");
+  const [level, setLevel] = useState(1);
   const handleSubmit = (e) => {
     e.preventDefault();
     let stats = {
+      creatureType,
+      level,
+      status,
       id,
-      // gender,
+      gender,
       name,
       health,
       stamina,
@@ -40,36 +40,21 @@ const Input = () => {
       imprinting,
     };
     addTolibrary(stats);
-
     console.log(stats);
-    // uploadTolibrary(stats);
-
-    // useEffect(() => {
-    //   async function getStats() {
-    //     setStats(await fetchStats());
-    //   }
-    //   getStats();
-    // }, []);
-
-    // const submitLibrary = async (event) => {
-    //   try {
-    //     event.preventDefault();
-    //     await uploadTolibrary(stats);
-    //     setUploadStatus("Success!");
-    //   } catch {
-    //     setUploadStatus("Unable to upload Stats");
-    //   } finally {
-    //     setTimeout(() => {
-    //       setUploadStatus(null);
-    //     }, 3000);
-    //   }
-    // };
-
-    // const onSelectFile = (event) => {
-    //   setSelectedFile(event.target.files[0]);
-    // };
+    setCreatureType("Choose...");
+    setGender();
+    setId(0);
+    setName("");
+    setHealth(0);
+    setStamina(0);
+    setOxygen(0);
+    setFood(0);
+    setWeight(0);
+    setMeleeDamage(0);
+    setMovementSpeed(0);
+    setTorpidity(0);
+    setImprinting(0);
   };
-
   return (
     <>
       <Links />
@@ -84,40 +69,48 @@ const Input = () => {
                 </Card.Title>
                 <br></br>
                 <Form.Group controlId="CreatureType">
-                  <Form.Label>Creature</Form.Label>  
+                  <Form.Label>Creature</Form.Label>
                   <br />
-                  <Form.Control as="select" defaultValue="Choose...">
+                  <Form.Control onChange={(e) => setCreatureType(e.target.value)} value={creatureType} as="select">
                     <option>Choose...</option>
                     <option value="Giganotosaurus">Giganotosaurus</option>
                     <option value="Quetzal">Quetzal</option>
                     <option value="Stegosaurus">Stegosaurus</option>
                     <option value="Tusoteuthis">Tusoteuthis</option>
                     <option value="Yutyrannus">Yutyrannus</option>
-                    {/* onChange={(e) => setCreatureType(e.target.value)} */}
                   </Form.Control>
                 </Form.Group>
                 <Form.Group>
                   <Form.Label>Gender</Form.Label>
-                  <Form.Control as="select" defaultValue="Choose...">
+                  <Form.Control onChange={(e) => setGender(e.target.value)} value={gender} as="select">
                     <option>Choose...</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option value="Spayed">Spayed</option>
                     <option value="Neutered">Neutered</option>
-                    {/* onChange={(e) => setGender(e.target.value)} */}
                   </Form.Control>
                 </Form.Group>
                 <Form.Group controlId="Status">
-                  <Form.Label>Status</Form.Label> 
-                  <Form.Control as="select" defaultValue="Choose...">
+                  <Form.Label>Status</Form.Label>
+                  <Form.Control onChange={(e) => setStatus(e.target.value)} value={status} as="select">
                     <option>Choose...</option>
                     <option value="Available">Available</option>
                     <option value="On Timer">On Timer</option>
                     <option value="Cryopod">Cryopod</option>
                     <option value="Deceased">Deceased</option>
-                    {/* onChange={(e) => setStatus(e.target.value)} */}
                   </Form.Control>
                 </Form.Group>
+                <div className="levelRow">
+                  <Card.Title>Level</Card.Title>
+                  <input
+                    className="level"
+                    type="number"
+                    min="1"
+                    max="500"
+                    value={level}
+                    onChange={(e) => setLevel(e.target.value)}
+                  />
+                </div>
                 <Card.Title>
                   <b>Name</b>
                 </Card.Title>
@@ -138,7 +131,6 @@ const Input = () => {
                   value={stamina}
                   onChange={(e) => setStamina(e.target.value)}
                 />
-
                 <Card.Title>Oxygen</Card.Title>
                 <input
                   className="oxygen"
@@ -147,10 +139,8 @@ const Input = () => {
                   value={oxygen}
                   onChange={(e) => setOxygen(e.target.value)}
                 />
-
                 <Card.Title>Food</Card.Title>
                 <input className="food" type="number" min="1" value={food} onChange={(e) => setFood(e.target.value)} />
-
                 <Card.Title>Weight</Card.Title>
                 <input
                   className="weight"
@@ -159,7 +149,6 @@ const Input = () => {
                   value={weight}
                   onChange={(e) => setWeight(e.target.value)}
                 />
-
                 <Card.Title>Melee Damage</Card.Title>
                 <input
                   className="meleeDamage"
@@ -168,7 +157,6 @@ const Input = () => {
                   value={meleeDamage}
                   onChange={(e) => setMeleeDamage(e.target.value)}
                 />
-
                 <Card.Title>Movement Speed</Card.Title>
                 <input
                   className="movementSpeed"
@@ -177,7 +165,6 @@ const Input = () => {
                   value={movementSpeed}
                   onChange={(e) => setMovementSpeed(e.target.value)}
                 />
-
                 <Card.Title>Torpidity</Card.Title>
                 <input
                   className="torpidity"
@@ -188,7 +175,6 @@ const Input = () => {
                 />
                 <Card.Title> Ark Sample ID</Card.Title>
                 <input className="id" type="number" min="1" value={id} onChange={(e) => setId(e.target.value)} />
-
                 <Card.Title>Imprinting</Card.Title>
                 <input
                   className="imprinting"
@@ -211,5 +197,4 @@ const Input = () => {
     </>
   );
 };
-
 export default Input;

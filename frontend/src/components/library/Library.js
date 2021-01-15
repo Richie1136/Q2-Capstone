@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Library.css";
 import Links from "../navigation/Links";
-// import { libraryStorage } from "../../utils/api";
-
 const URL = "http://localhost:4000/library"; //need to get api set up or something to get data from
 const Table = () => {
   const [dinos, setDinos] = useState([]);
@@ -24,6 +22,9 @@ const Table = () => {
   const renderHeader = () => {
     let headerElement = [
       "Ark id",
+      "Type",
+      "Level",
+      "Status",
       "name",
       "gender",
       "health",
@@ -47,6 +48,9 @@ const Table = () => {
       dinos.map(
         ({
           id,
+          creatureType,
+          level,
+          status,
           name,
           gender,
           health,
@@ -62,6 +66,9 @@ const Table = () => {
           return (
             <tr key={id}>
               <td>{id}</td>
+              <td>{creatureType}</td>
+              <td>{level}</td>
+              <td>{status}</td>
               <td>{name}</td>
               <td>{gender}</td>
               <td>{health}</td>
