@@ -38,6 +38,10 @@
   padding: 10px 0;
 }
 
+a {
+  display: inline-flex;
+}
+
 /* a {
   display: flex;
   position: absolute;
