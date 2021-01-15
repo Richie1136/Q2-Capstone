@@ -3,6 +3,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import { Dino } from "./dinoSchema";
+import { userModel } from "./UserSchema";
 import dotenv from "dotenv";
 import { libraryStorage } from "../frontend/src/utils/api";
 import { Db } from "mongodb";
@@ -33,7 +34,7 @@ app.get("/user", (req, res) => {
 
 //generate user ID, unique key
 app.get("/library", async (req, res) => {
-  console.log(await Dino.find());
+  // console.log(await Dino.find());
   res.json(await Dino.find());
 });
 
@@ -49,14 +50,18 @@ app.post("/library", async (req, res) => {
     });
 });
 
-app.post("/library/:userId", async (req, res) => {
-  try {
-    const { user } = await libraryStorage(req.body.userId);
-    console.log(user);
-    res.json({ user });
-  } catch (err) {
-    res.status(404).json({ msg: "Unable to find file" });
-  }
+app.delete("/library", (req, res) => {
+  res.send("DELETE Request Called");
+});
+
+app.get("/user", async (req, res) => {
+  //store user's tribe name, username and photo
+  //userModel is what will be used here
+});
+
+app.post("/user", async (req, res) => {
+  //show tribe name, username and photo in profile route
+  //userModel is what will be used here
 });
 
 app.get("*", (req, res) => {

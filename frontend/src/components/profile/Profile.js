@@ -6,7 +6,7 @@ import "./Profile.css";
 
 const Profile = ({ onFormSubmit }) => {
   const [picture, setPicture] = useState(null);
-  const [files, setFiles] = useState(null)
+  const [files, setFiles] = useState(null);
   const [imgData, setImgData] = useState(null);
   const [enabled, setEnabled] = useState(false);
   const [tribeName, SetTribeName] = useState("");
@@ -26,7 +26,6 @@ const Profile = ({ onFormSubmit }) => {
       reader.readAsDataURL(event.target.files[0]);
     }
   };
-
   // const onSubmit = (event) => {
   //   event.preventDefault();
   //   // onFormSubmit(files);
@@ -64,7 +63,9 @@ const Profile = ({ onFormSubmit }) => {
             // onChange={(event) => setFiles(event.target.value)}
             onChange={onChangePicture}
           />
-          <button className="submit" type="submit">Upload</button>
+          <button className="submit" type="submit">
+            Upload
+          </button>
           <div className="previewProfilePic"></div>
         </div>
         <br />
@@ -75,10 +76,10 @@ const Profile = ({ onFormSubmit }) => {
         {enabled ? (
           <button type="submit">Submit</button>
         ) : (
-            <button disabled type="submit">
-              Submit
-            </button>
-          )}
+          <button disabled type="submit">
+            Submit
+          </button>
+        )}
       </form>
     </>
   );

@@ -5,10 +5,10 @@
   "module": "main.js",
   "scripts": {
     "vercel": "vercel dev",
-    "dev": "concurrently \"nodemon --watch api\"",
+    "dev": "concurrently \"nodemon --watch api\"\react-scripts start\"",
     "build": "react-scripts build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node backend/index.js"
   },
   "author": "",
   "license": "ISC",
