@@ -6,6 +6,7 @@ import "./Profile.css";
 
 const Profile = ({ onFormSubmit }) => {
   const [picture, setPicture] = useState(null);
+  const [files, setFiles] = useState(null)
   const [imgData, setImgData] = useState(null);
   const [enabled, setEnabled] = useState(false);
   const [tribeName, SetTribeName] = useState("");
@@ -26,10 +27,10 @@ const Profile = ({ onFormSubmit }) => {
     }
   };
 
-  const onSubmit = (event) => {
-    event.preventDefault();
-    // onFormSubmit(files);
-  };
+  // const onSubmit = (event) => {
+  //   event.preventDefault();
+  //   // onFormSubmit(files);
+  // };
 
   // useEffect(() => {
   //   if (files.length === 0) {
@@ -67,7 +68,7 @@ const Profile = ({ onFormSubmit }) => {
           <div className="previewProfilePic"></div>
         </div>
         <br />
-        <h1>Enter Tribe Name</h1>
+        <h1 className="Tribe">Enter Tribe Name</h1>
         <div onSubmit={onFormSubmit}>
           <input type="text" value={tribeName} onChange={(event) => SetTribeName(event.target.value)} />
         </div>

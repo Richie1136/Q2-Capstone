@@ -30,3 +30,10 @@ html[data-theme="dark"] {
   font-size: calc(10px + 2vmin);
   color: var(--primary-color);
 }
+
+a {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  padding: 10px;
+}

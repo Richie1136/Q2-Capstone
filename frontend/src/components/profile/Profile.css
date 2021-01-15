@@ -1,24 +1,39 @@
 .avatar {
   display: flex;
   justify-content: center;
-  margin-right: 790px;
+  margin-right: 1000px;
   margin-top: 10px;
 }
 
 .images {
   display: flex;
   margin-top: 20px;
+  margin-right: 600px;
 }
 
 .submit {
   display: flex;
   justify-content: center;
   margin-top: -22px;
-  margin-left: 200px;
+  margin-left: 222px;
 }
 
 .ProfilePic {
   display: flex;
-  margin-right: 800px;
+  margin-right: 1000px;
   margin-top: 5px;
+}
+
+.Tribe {
+  display: flex;
+  margin-left: 450px;
+  margin-top: -200px;
+}
+
+.links {
+  display: flex;
+  margin: auto;
+  justify-content: space-around;
+  padding: 10px;
+  white-space: nowrap;
 }
