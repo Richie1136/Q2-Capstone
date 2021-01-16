@@ -1,19 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Links from "../navigation/Links";
-import Settings from "../profile/settings/Settings";
 import "./Profile.css";
 
 const Profile = ({ onFormSubmit }) => {
-  const [picture, setPicture] = useState(null);
-  const [files, setFiles] = useState(null);
+  const [setPicture] = useState(null);
+
   const [imgData, setImgData] = useState(null);
   const [enabled, setEnabled] = useState(false);
   const [tribeName, SetTribeName] = useState("");
-
-  const onInputChange = (event) => {
-    SetTribeName(event.value.target);
-  };
 
   const onChangePicture = (event) => {
     if (event.target.files[0]) {

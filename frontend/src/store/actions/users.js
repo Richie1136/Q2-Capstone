@@ -1,5 +1,6 @@
 import { v4 } from "uuid";
 import { getUser, register } from "../../utils/api";
+import { useDispatch } from "react-redux";
 
 export const SIGNUP = "SIGNUP";
 export const signUp = (email) => {

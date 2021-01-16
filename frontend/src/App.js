@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import Navigation from "./components/navigation/Navigation";
 import useAuth from "./hooks/useAuth";
@@ -6,12 +7,13 @@ import { GlobalStyles } from "./components/globalStyles";
 import { lightTheme, darkTheme } from "./components/Themes";
 import { useDarkMode } from "./components/useDarkMode";
 import Toggle from "./components/Toggler";
-// import Profile from "../src/screens/Profile";
 import logo from "../src/assets/stegorock.gif";
 import { signUp, logIn } from "./store/actions/users";
+import { useDispatch } from "react-redux";
 
-function App() {
+export default function App() {
   const auth = useAuth();
+  const dispatch = useDispatch();
 
   const [theme, themeToggler, mountedComponent] = useDarkMode();
 
@@ -22,11 +24,10 @@ function App() {
   async function signUpNow() {
     try {
       const email = prompt("Enter your email");
-      await signUp(email);
+      await dispatch(signUp(email));
       loginNow(email);
     } catch (err) {
       console.error(err);
-      // maybe updat some sort of state to let the user know that it failed =]
     }
   }
 
@@ -34,22 +35,20 @@ function App() {
     e.preventDefault();
     loginNow();
   };
-  // Please dont do this
+
   async function loginNow(email) {
     try {
       if (!email) {
         email = prompt("Enter your email");
       }
-      await logIn(email);
+      await dispatch(logIn(email));
       await auth.login(email);
     } catch (err) {
       console.error(err);
-      // maybe updat some sort of state to let the user know that it failed =]
     }
   }
 
   if (auth.loading || auth.loggingIn || auth.loggingOut) {
-    // User is currently trying to log in or something..
     return <img src={logo} alt="Loading......." />;
   }
 
@@ -81,4 +80,4 @@ function App() {
   );
 }
 
-export default App;
+// export default App;

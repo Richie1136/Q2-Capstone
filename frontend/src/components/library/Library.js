@@ -10,7 +10,6 @@ const Table = () => {
   }, []);
   const getData = async () => {
     const response = await axios.get(URL);
-    console.log(response.data);
     setDinos(response.data);
   };
   const removeData = (id) => {
