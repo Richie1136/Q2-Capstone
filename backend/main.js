@@ -50,8 +50,15 @@ app.get("/user", (req, res) => {
   res.send("profile info page");
 });
 
-//generate user ID, unique key
+//3. generate user ID, unique key so library is subjective to user
+//4. use user's ID to find user doc
+//5. Make new dino to test user library
+//subcollection for mongodb?
+//6. push dino onto logged in user's library
+//7. Get current user's ID (req.userID)
+//const doc = await userModel.find({ id: req.params.id });
 app.get("/library", async (req, res) => {
+  // console.log(await Dino.find());
   res.json(await Dino.find());
 });
 
@@ -68,19 +75,19 @@ app.post("/library", async (req, res) => {
     });
 });
 
-app.delete("/library/:user", (req, res) => {
-  res.send("DELETE Request Called");
-});
-
-// app.get("/user", async (req, res) => {
-//   //store user's tribe name, username and photo
-//   //userModel is what will be used here
+// app.delete("/library/:user", (req, res) => {
+//   res.send("DELETE Request Called");
 // });
 
-// app.post("/user", async (req, res) => {
-//   //show tribe name, username and photo in profile route
-//   //userModel is what will be used here
-// });
+//app.get("/user", async (req, res) => {
+//store user's tribe name, username and photo
+//userModel is what will be used here
+//});
+
+//app.post("/user", async (req, res) => {
+//show tribe name, username and photo in profile route
+//userModel is what will be used here
+//});
 
 app.get("*", (req, res) => {
   res.status(404).json({
