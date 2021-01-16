@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import { Dino } from "./dinoSchema";
 import { userModel } from "./UserSchema";
+import { dinoSchema } from "./dinoSchema";
 import dotenv from "dotenv";
 import { libraryStorage } from "../frontend/src/utils/api";
 import mongodb, { Db } from "mongodb";

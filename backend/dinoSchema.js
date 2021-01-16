@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 export const dinoSchema = new mongoose.Schema({
+  type: mongoose.Schema.Types.ObjectId,
+  ref: "library"
   level: Number,
   creatureType: String,
   name: String,
@@ -19,3 +21,4 @@ export const dinoSchema = new mongoose.Schema({
   id: Number,
 });
 export let Dino = mongoose.model("Dino", dinoSchema);
+
