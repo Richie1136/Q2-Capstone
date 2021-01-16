@@ -4,7 +4,8 @@ import Card from "react-bootstrap/Card";
 import Links from "../components/navigation/Links";
 import { addTolibrary } from "../utils/api";
 import Form from "react-bootstrap/Form";
-import "./Input.css"
+import "./Input.css";
+
 const Input = () => {
   const [id, setId] = useState(0);
   const [name, setName] = useState("");
