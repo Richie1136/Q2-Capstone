@@ -2,6 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
+  "engine": {
+    "node": "14.15.0"
+  },
   "module": "main.js",
   "scripts": {
     "start": "node index.js"
@@ -18,6 +21,7 @@
     "is-empty": "^1.2.0",
     "mongodb": "^3.6.3",
     "mongoose": "^5.11.11",
+    "node": "^15.4.0",
     "uuid": "^8.3.2",
     "validator": "^13.5.2"
   },
