@@ -12,7 +12,7 @@ import mongodb, { Db } from "mongodb";
 dotenv.config();
 
 const app = express();
-const port = 4000;
+const port = process.env.port || 4000;
 
 app.use(cors());
 app.use(express.json());
@@ -21,12 +21,12 @@ app.use(bodyParser.json());
 
 const { MongoClient } = require("mongodb").MongoClient;
 
-const uri = process.env.DB_CONNECTION;
+// const uri = process.env.DB_CONNECTION;
 mongoose.Promise = global.Promise;
 const client = mongoose.connect(uri, { useUnifiedTopology: true, useNewUrlParser: true });
 
 app.get("/", (req, res) => {
-  res.send("homepage");
+  res.send("WELCOME");
 });
 
 app.post("/signup", (req, res) => {
