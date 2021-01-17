@@ -19,3 +19,17 @@ export const getUser = async (email) => {
   const emailData = await axios.get(`${url}/login/${email}`);
   return emailData.data;
 };
+
+export const getDinos = async (userID) => {
+  const response = await axios.get(`${url}/library`, userID);
+  return response.userID;
+};
+
+//const removeData = (id) => {
+// axios.delete(`${URL}/dinos/${id}`).then((res) => {
+//   const del = dinos.filter((dino) => id !== dino._id);
+//   setDinos(del);
+//   console.log("res", res);
+// });
+//console.log(removeData);
+// };

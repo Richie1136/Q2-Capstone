@@ -1,24 +1,17 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { getDinos } from "../../utils/api";
 import "./Library.css";
 import Links from "../navigation/Links";
-const URL = "http://localhost:4000/library"; //need to get api set up or something to get data from
+import { useSelector } from "react-redux";
+// import { PersistGate } from "redux-persist/integration/react";
+const URL = "http://localhost:4000/library";
+
 const Table = () => {
   const [dinos, setDinos] = useState([]);
+  const yourID = useSelector((state) => state.id);
   useEffect(() => {
-    getData();
+    setDinos = (getDinos(yourID));
   }, []);
-  const getData = async () => {
-    const response = await axios.get(URL);
-    setDinos(response.data);
-  };
-  const removeData = (id) => {
-    axios.delete(`${URL}/dinos/${id}`).then((res) => {
-      const del = dinos.filter((dino) => id !== dino._id);
-      setDinos(del);
-      console.log("res", res);
-    });
-  };
   const renderHeader = () => {
     let headerElement = [
       "Ark id",
@@ -44,25 +37,9 @@ const Table = () => {
   };
   const renderBody = () => {
     return (
-      dinos &&
-      dinos.map(
-        ({
-          id,
-          creatureType,
-          level,
-          status,
-          name,
-          gender,
-          health,
-          stamina,
-          oxygen,
-          food,
-          weight,
-          meleeDamage,
-          movementSpeed,
-          torpidity,
-          imprinting,
-        }) => {
+        (
+          // {dinos ? JSON.stringify(dinos) : null}
+          ) => {
           return (
             <tr key={id}>
               <td>{id}</td>
@@ -80,15 +57,10 @@ const Table = () => {
               <td>{movementSpeed}</td>
               <td>{torpidity}</td>
               <td>{imprinting}</td>
-              <td className="remove">
-                <button id="button" onClick={() => removeData(id)}>
-                  Delete
-                </button>
-              </td>
             </tr>
           );
         },
-      )
+      
     );
   };
   return (
@@ -99,7 +71,9 @@ const Table = () => {
         <thead>
           <tr>{renderHeader()}</tr>
         </thead>
-        <tbody>{renderBody()}</tbody>
+        <tbody>
+          {renderBody()}
+        </tbody>
       </table>
     </>
   );

@@ -63,6 +63,7 @@ const Input = () => {
     userID: "",
     dinoData: stats,
   };
+
   uniqueUser.userID = useSelector((state) => state.id);
 
   return (
