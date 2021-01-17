@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 
 const { MongoClient } = require("mongodb").MongoClient;
 
-// const uri = process.env.DB_CONNECTION;
+const uri = process.env.DB_CONNECTION;
 mongoose.Promise = global.Promise;
 const client = mongoose.connect(process.env.DB_CONNECTION, { useUnifiedTopology: true, useNewUrlParser: true });
 

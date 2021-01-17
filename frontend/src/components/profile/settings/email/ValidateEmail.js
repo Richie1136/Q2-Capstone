@@ -1,12 +1,5 @@
-export default function ValidateEmailInfo(values) {
+export default function ValidateEmail(values) {
   let errors = {};
-
-  // if(/#/.test(values.email) ) {
-  //   errors.email = 'Email Adress contains invalid character'
-  //   console.log('guard clause')
-  // } else {
-
-  // }
 
   if (!values.email) {
     errors.email = "Email required";

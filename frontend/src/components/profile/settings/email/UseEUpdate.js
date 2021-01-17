@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const UseEmailUpdate = (callback, validate) => {
+const UseEUpdate = (callback, validate) => {
   const [values, setValues] = useState({
     email: "",
     email2: "",
@@ -32,4 +32,4 @@ const UseEmailUpdate = (callback, validate) => {
   return { handleChange, values, handleSubmit, errors };
 };
 
-export default UseEmailUpdate;
+export default UseEUpdate;

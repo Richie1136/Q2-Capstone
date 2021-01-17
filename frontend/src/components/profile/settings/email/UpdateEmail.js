@@ -1,18 +1,19 @@
 import React from "react";
-import UseEmailUpdate from "./UseEmailUpdate";
-import ValidateEmailInfo from "./ValidateEmailInfo";
+import UseEUpdate from "./UseEUpdate";
+import ValidateEmail from "./ValidateEmail";
+import "./Email.css";
 
 const UpdateEmail = ({ submitForm }) => {
-  const { handleChange, values, handleSubmit, errors } = UseEmailUpdate(submitForm, ValidateEmailInfo);
+  const { handleChange, values, handleSubmit, errors } = UseEUpdate(submitForm, ValidateEmail);
 
   return (
     <div className="form-content-right">
       <form className="form" onSubmit={handleSubmit} noValidate>
-        <h1>Change Your Email Address:</h1>
-        <div className="form-inputs">
-          <label className="form-label">Enter Your Current Email Address:</label>
+        <h3>Change Your Email Address</h3>
+        <div className="current-form-inputs">
+          <label className="current-label">Enter Your Current Email Address:</label>
           <input
-            className="form-input"
+            className="current-input"
             type="email"
             name="email"
             placeholder="Your Current Email Address"
@@ -21,10 +22,10 @@ const UpdateEmail = ({ submitForm }) => {
           />
           {errors.email && <p>{errors.email}</p>}
         </div>
-        <div className="form-inputs">
-          <label className="form-label">Enter Your New Email Address:</label>
+        <div className="new-form-inputs">
+          <label className="new-label">Enter Your New Email Address:</label>
           <input
-            className="form-input"
+            className="new-input"
             type="email"
             name="email2"
             placeholder="Confirm Your New Email Address"

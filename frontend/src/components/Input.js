@@ -64,10 +64,10 @@ const Input = () => {
         <Card>
           <form onSubmit={handleSubmit}>
             <div className="ui-form">
-              <div className="field">
+              <div className="fields">
                 <br></br>
                 <Card.Title>
-                  <b>Enter stats</b>
+                  <h3>Enter stats</h3>
                 </Card.Title>
                 <br></br>
                 <Form.Group controlId="CreatureType">
@@ -114,7 +114,7 @@ const Input = () => {
                   />
                 </div>
                 <Card.Title>
-                  <b>Name</b>
+                  <>Name</>
                 </Card.Title>
                 <input className="name" type="string" value={name} required onChange={(e) => setName(e.target.value)} />
                 <Card.Title> Health</Card.Title>

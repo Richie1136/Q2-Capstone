@@ -41,8 +41,8 @@ export default function App() {
       if (!email) {
         email = prompt("Enter your email");
       }
-      await dispatch(logIn(email));
-      await auth.login(email);
+      await dispatch(auth.logIn(email));
+      // await auth.login(email);
     } catch (err) {
       console.error(err);
     }

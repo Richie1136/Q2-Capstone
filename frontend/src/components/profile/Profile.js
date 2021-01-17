@@ -5,7 +5,6 @@ import "./Profile.css";
 
 const Profile = ({ onFormSubmit }) => {
   const [setPicture] = useState(null);
-
   const [imgData, setImgData] = useState(null);
   const [enabled, setEnabled] = useState(false);
   const [tribeName, SetTribeName] = useState("");
@@ -36,30 +35,31 @@ const Profile = ({ onFormSubmit }) => {
       <Link to="/user/settings">Settings</Link>
       <form className="File Submit">
         <div className="image upload">
-          <label className="avatar">Avatar</label>
-          <img className="ProfilePic" src={imgData} alt="" height="180px" width="180px" />
+          <h3 className="avatar">Avatar</h3>
+
+          <img className="profilePic" src={imgData} alt="" height="180px" width="180px" />
           <input
-            className="images"
+            className="imagesUpload"
             type="file"
             accept=".jpg, .jpeg, .pdf, .png, .svg"
-            // value={files}
-            // onChange={(event) => setFiles(event.target.value)}
             onChange={onChangePicture}
           />
-          <button className="submit" type="submit">
+          <button className="uploadSubmit" type="submit">
             Upload
           </button>
           <div className="previewProfilePic"></div>
         </div>
         <br />
-        <h1 className="Tribe">Enter Tribe Name</h1>
+        <h3 className="Tribe">Enter Tribe Name</h3>
         <div onSubmit={onFormSubmit}>
           <input type="text" value={tribeName} onChange={(event) => SetTribeName(event.target.value)} />
         </div>
         {enabled ? (
-          <button type="submit">Submit</button>
+          <button className="submit" type="submit">
+            Submit
+          </button>
         ) : (
-          <button disabled type="submit">
+          <button className="tribeSubmit" disabled type="submit">
             Submit
           </button>
         )}
