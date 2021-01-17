@@ -18,9 +18,11 @@ export const signUp = (email) => {
 };
 
 export const LOGIN = "LOGIN";
-export const logIn = (email) => {
+export const logIn = async (email) => {
+  const getuser = await getUser(email);
+  console.log(getuser);
   return {
     type: LOGIN,
-    payload: getUser(email),
+    payload: getuser,
   };
 };

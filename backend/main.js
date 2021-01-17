@@ -64,7 +64,7 @@ app.get("/library", async (req, res) => {
   res.json(await Dino.find());
 });
 
-app.post("/library", async (req, res) => {
+app.post("/library/:user", async (req, res) => {
   const myData = new Dino(req.body);
   userModel.library
     .push(myData)
