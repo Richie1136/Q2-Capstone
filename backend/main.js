@@ -6,9 +6,7 @@ import { Dino } from "./dinoSchema";
 import { userModel } from "./UserSchema";
 import { dinoSchema } from "./dinoSchema";
 import dotenv from "dotenv";
-import { libraryStorage } from "../frontend/src/utils/api";
 import mongodb, { Db } from "mongodb";
-// import { userLibrary } from "./utils";
 
 dotenv.config();
 
@@ -44,7 +42,6 @@ app.post("/signup", (req, res) => {
 
 app.get("/login/:email", async (req, res) => {
   const doc = await userModel.findOne({ email: req.params.email });
-  console.log(doc.id);
   res.send(doc.id);
 });
 
@@ -52,22 +49,21 @@ app.get("/user", (req, res) => {
   res.send("profile info page");
 });
 
-//3. generate user ID, unique key so library is subjective to user
-//4. use user's ID to find user doc
-//5. Make new dino to test user library
-//subcollection for mongodb?
-//6. push dino onto logged in user's library
-//7. Get current user's ID (req.userID)
-//const doc = await userModel.find({ id: req.params.id });
 app.get("/library", async (req, res) => {
-  // console.log(await Dino.find());
-  res.json(await Dino.find());
+  res.json(await uniqueUser.findOne({ id: req.body.userID }));
+  //1. on frontend, our req.send current user id - useSelector
+  //2. get id out of req.body.userID
+  //3. find the user doc with that id
+  //4. get the array of dinos from that doc
+  //5. res.send()
+  //6. display on frontend in user's library
 });
 
-app.post("/library/:user", async (req, res) => {
-  const myData = new Dino(req.body);
-  userModel.library
-    .push(myData)
+app.post("/library", async (req, res) => {
+  const myData = new Dino(req.body.dinoData);
+  const userDoc = await userModel.findOne({ id: req.body.userID });
+  userDoc.dinos.push(myData);
+  userDoc
     .save()
     .then((item) => {
       res.send("item saved to database");
@@ -76,9 +72,6 @@ app.post("/library/:user", async (req, res) => {
       res.status(400).send("unable to save to database");
     });
 });
-
-//Testing new post for library
-app.post("/library");
 
 // app.delete("/library/:user", (req, res) => {
 //   res.send("DELETE Request Called");

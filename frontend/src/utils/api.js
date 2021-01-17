@@ -1,4 +1,5 @@
 import axios from "axios";
+import { uniqueUser } from "../components/Input";
 
 const url = "http://localhost:4000";
 
@@ -16,10 +17,6 @@ export const register = async (data) => {
 };
 
 export const getUser = async (email) => {
-  // console.log(email);
   const emailData = await axios.get(`${url}/login/${email}`);
-  // console.log(emailData.data);
   return emailData.data;
 };
-
-//useSelector hook           send obj with 2 properties: userID and dinoStats

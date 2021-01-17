@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import CardDeck from "react-bootstrap/CardDeck";
 import Card from "react-bootstrap/Card";
 import Links from "../components/navigation/Links";
@@ -22,27 +23,27 @@ const Input = () => {
   const [creatureType, setCreatureType] = useState("Choose...");
   const [status, setStatus] = useState("Choose...");
   const [level, setLevel] = useState(1);
+  const stats = {
+    creatureType,
+    level,
+    status,
+    id,
+    gender,
+    name,
+    health,
+    stamina,
+    oxygen,
+    food,
+    weight,
+    meleeDamage,
+    movementSpeed,
+    torpidity,
+    imprinting,
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    let stats = {
-      creatureType,
-      level,
-      status,
-      id,
-      gender,
-      name,
-      health,
-      stamina,
-      oxygen,
-      food,
-      weight,
-      meleeDamage,
-      movementSpeed,
-      torpidity,
-      imprinting,
-    };
-    addTolibrary(stats);
-    console.log(stats);
+    addTolibrary(uniqueUser);
     setCreatureType("Choose...");
     setGender();
     setId(0);
@@ -57,6 +58,13 @@ const Input = () => {
     setTorpidity(0);
     setImprinting(0);
   };
+
+  const uniqueUser = {
+    userID: "",
+    dinoData: stats,
+  };
+  uniqueUser.userID = useSelector((state) => state.id);
+
   return (
     <>
       <Links />
