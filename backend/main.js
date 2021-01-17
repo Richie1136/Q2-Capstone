@@ -1,4 +1,4 @@
-import express, { urlencoded } from "express";
+import express, { response, urlencoded } from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
@@ -50,10 +50,15 @@ app.get("/user", (req, res) => {
 });
 
 app.get("/library", async (req, res) => {
-  res.json(await uniqueUser.findOne({ id: req.body.userID }));
-  //1. on frontend, our req.send current user id - useSelector
-  //2. get id out of req.body.userID
-  //3. find the user doc with that id
+  // console.log(userDoc.dinoData);
+  const userDoc = await uniqueUser.find({ id: req.body.userID });
+  const dinoDoc = await uniqueUser.find({ dinos: req.body.dinoData });
+
+  res.json(await userDoc.find());
+
+  //1. on frontend, our req.send current user id - useSelector-done
+  //2. get id out of req.body.userID-done
+  //3. find the user doc with that id-done
   //4. get the array of dinos from that doc
   //5. res.send()
   //6. display on frontend in user's library

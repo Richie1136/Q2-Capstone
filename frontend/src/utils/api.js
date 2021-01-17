@@ -1,5 +1,4 @@
 import axios from "axios";
-import { uniqueUser } from "../components/Input";
 
 const url = "http://localhost:4000";
 
