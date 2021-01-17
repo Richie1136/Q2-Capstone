@@ -10,7 +10,9 @@ const Table = () => {
   const [dinos, setDinos] = useState([]);
   const yourID = useSelector((state) => state.id);
   useEffect(() => {
-    setDinos = (getDinos(yourID));
+    async function findDinos() {
+      setDinos(await getDinos(yourID));
+    }
   }, []);
   const renderHeader = () => {
     let headerElement = [
@@ -37,9 +39,25 @@ const Table = () => {
   };
   const renderBody = () => {
     return (
-        (
-          // {dinos ? JSON.stringify(dinos) : null}
-          ) => {
+      dinos &&
+      dinos.map(
+        ({
+          id,
+          creatureType,
+          level,
+          status,
+          name,
+          gender,
+          health,
+          stamina,
+          oxygen,
+          food,
+          weight,
+          meleeDamage,
+          movementSpeed,
+          torpidity,
+          imprinting,
+        }) => {
           return (
             <tr key={id}>
               <td>{id}</td>
@@ -57,10 +75,15 @@ const Table = () => {
               <td>{movementSpeed}</td>
               <td>{torpidity}</td>
               <td>{imprinting}</td>
+              <td className="remove">
+                {/* <button id="button" onClick={() => removeData(id)}>
+                  Delete
+                </button> */}
+              </td>
             </tr>
           );
         },
-      
+      )
     );
   };
   return (
@@ -72,7 +95,8 @@ const Table = () => {
           <tr>{renderHeader()}</tr>
         </thead>
         <tbody>
-          {renderBody()}
+          {renderBody}
+          <>{dinos ? JSON.stringify(dinos) : null}</>
         </tbody>
       </table>
     </>
