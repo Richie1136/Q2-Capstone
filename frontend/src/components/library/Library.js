@@ -3,17 +3,17 @@ import { getDinos } from "../../utils/api";
 import "./Library.css";
 import Links from "../navigation/Links";
 import { useSelector } from "react-redux";
-// import { PersistGate } from "redux-persist/integration/react";
-const URL = "http://localhost:4000/library";
 
 const Table = () => {
   const [dinos, setDinos] = useState([]);
   const yourID = useSelector((state) => state.id);
   useEffect(() => {
-    async function findDinos() {
+    async function displayDinos() {
       setDinos(await getDinos(yourID));
     }
-  }, []);
+    displayDinos();
+  }, [yourID]);
+
   const renderHeader = () => {
     let headerElement = [
       "Ark id",
@@ -75,11 +75,7 @@ const Table = () => {
               <td>{movementSpeed}</td>
               <td>{torpidity}</td>
               <td>{imprinting}</td>
-              <td className="remove">
-                {/* <button id="button" onClick={() => removeData(id)}>
-                  Delete
-                </button> */}
-              </td>
+              <td className="remove"></td>
             </tr>
           );
         },

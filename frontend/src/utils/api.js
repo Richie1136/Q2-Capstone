@@ -22,8 +22,8 @@ export const getUser = async (email) => {
 
 export const getDinos = async (userID) => {
   const response = await axios.get(`${url}/library`, userID);
-  return response.userID;
-  //return response.data;
+  return response.data;
+  //return response.userID?
 };
 
 //const removeData = (id) => {
