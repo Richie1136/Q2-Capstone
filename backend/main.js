@@ -50,18 +50,16 @@ app.get("/user", (req, res) => {
 });
 
 app.get("/library", async (req, res) => {
-  // console.log(userDoc.dinoData);
-  const userDoc = await uniqueUser.find({ id: req.body.userID });
-  const dinoDoc = await uniqueUser.find({ dinos: req.body.dinoData });
+  const userDoc = await userModel.findOne({ id: req.body.userID }); //Steps 1, 2, and 3?
+  const displayDino = await userDoc.dinos.find(); //Step 4?
+  res.json(await displayDino.find()); //Steps 5 and 6?
 
-  res.json(await userDoc.find());
-
-  //1. on frontend, our req.send current user id - useSelector-done
-  //2. get id out of req.body.userID-done
-  //3. find the user doc with that id-done
-  //4. get the array of dinos from that doc
-  //5. res.send()
-  //6. display on frontend in user's library
+  //Done//1.On the front end, our request needs to send the current user's id (useSelector again)
+  //Done//2. get the id out of the request body like we did in post.
+  //Done//3. find the user document with that id. Just like we did down in the post.
+  //4. get the array of dinos from that document.
+  //5. send it to the frontend
+  //6. display it on the frontend
 });
 
 app.post("/library", async (req, res) => {
@@ -80,6 +78,9 @@ app.post("/library", async (req, res) => {
 
 // app.delete("/library/:user", (req, res) => {
 //   res.send("DELETE Request Called");
+// Delete request done in backend.
+// Send the id of the dino you want to delete to the backend.
+//You would need to find the user who has the dino with that id and just slice it off of the array.
 // });
 
 //app.get("/user", async (req, res) => {
