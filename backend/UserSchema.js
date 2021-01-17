@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import { dinoSchema } from "./dinoSchema";
 
-const userSchema = new mongoose.Schema({
+export const UserSchema = new mongoose.Schema({
   email: String,
   dinos: dinoSchema,
   id: String,
@@ -9,4 +9,4 @@ const userSchema = new mongoose.Schema({
   tribeName: String,
 });
 
-export const userModel = mongoose.model("User", userSchema);
+export const userModel = mongoose.model("User", UserSchema);

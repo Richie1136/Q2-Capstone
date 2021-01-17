@@ -11,12 +11,12 @@ export const findUploadedFile = async (fileName) => {
   return info;
 };
 
-library.create(newLibraryDataObj, function (error, createdLibrary) {
-  UserSchema.findOne({
-    email: getUser(),
-    function(error, foundUser) {
-      foundUser.library.push(createdLibrary);
-      foundUser.save();
-    },
-  });
-});
+// export const userLibrary = dinos.create(newLibraryDataObj, function (error, createdLibrary) {
+//   UserSchema.findOne({
+//     email: getUser(),
+//     function(error, foundUser) {
+//       foundUser.library.push(createdLibrary);
+//       foundUser.save();
+//     },
+//   });
+// });

@@ -8,6 +8,7 @@ import { dinoSchema } from "./dinoSchema";
 import dotenv from "dotenv";
 import { libraryStorage } from "../frontend/src/utils/api";
 import mongodb, { Db } from "mongodb";
+// import { userLibrary } from "./utils";
 
 dotenv.config();
 
@@ -23,7 +24,7 @@ const { MongoClient } = require("mongodb").MongoClient;
 
 // const uri = process.env.DB_CONNECTION;
 mongoose.Promise = global.Promise;
-const client = mongoose.connect(uri, { useUnifiedTopology: true, useNewUrlParser: true });
+const client = mongoose.connect(process.env.DB_CONNECTION, { useUnifiedTopology: true, useNewUrlParser: true });
 
 app.get("/", (req, res) => {
   res.send("WELCOME");
@@ -75,6 +76,9 @@ app.post("/library", async (req, res) => {
       res.status(400).send("unable to save to database");
     });
 });
+
+//Testing new post for library
+app.post("/library");
 
 // app.delete("/library/:user", (req, res) => {
 //   res.send("DELETE Request Called");
