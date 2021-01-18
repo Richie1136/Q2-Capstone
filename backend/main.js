@@ -49,13 +49,11 @@ app.get("/user", (req, res) => {
   res.send("profile info page");
 });
 
-app.get("/library", async (req, res) => {
-  console.log(req.body, req.params);
-  console.log(userDoc);
+app.get("/library/:yourID", async (req, res) => {
   const userDoc = await userModel.findOne({ id: req.params.yourID }); //Steps 1, 2, and 3?
 
-  const displayDino = userDoc.Dino; //Step 4?
-  res.send(displayDino); //Steps 5 and 6?
+  const displayDino = userDoc.dinos; //Step 4?
+  res.json(displayDino); //Steps 5 and 6?
 
   //Done//1.On the front end, our request needs to send the current user's id (useSelector again)
   //Done//2. get the id out of the request body like we did in post.
@@ -65,8 +63,9 @@ app.get("/library", async (req, res) => {
   //6. display it on the frontend
 });
 
-app.post("/library", async (req, res) => {
+app.post("/library/", async (req, res) => {
   const myData = new Dino(req.body.dinoData);
+  console.log(req.body.userID);
   const userDoc = await userModel.findOne({ id: req.body.userID });
   userDoc.dinos.push(myData);
   userDoc

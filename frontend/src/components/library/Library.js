@@ -6,13 +6,13 @@ import { useSelector } from "react-redux";
 
 const Table = () => {
   const [dinos, setDinos] = useState([]);
-  const yourID = useSelector((state) => state.id);
+  const userID = useSelector((state) => state.id);
   useEffect(() => {
     async function displayDinos() {
-      setDinos(await getDinos(yourID));
+      setDinos(await getDinos(userID));
     }
     displayDinos();
-  }, [yourID]);
+  }, [userID]);
 
   const renderHeader = () => {
     let headerElement = [
