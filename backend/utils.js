@@ -5,7 +5,6 @@ import { UserSchema } from "./UserSchema";
 import { libraryStorage, getUser } from "../frontend/src/utils/api";
 
 export const uploadDirectory = "http://localhost:4000/library";
-
 export const findUploadedFile = async (fileName) => {
   const info = await fs.stat(path.resolve(uploadDirectory, fileName));
   return info;

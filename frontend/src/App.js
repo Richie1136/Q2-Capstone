@@ -65,15 +65,15 @@ export default function App() {
               <button onClick={() => auth.logout()}>Logout</button>
             </div>
           ) : (
-            <>
-              <div>
-                <button onClick={signUpNow}>Sign Up</button>
-              </div>
-              <div>
-                <button onClick={handleLogIn}>Login</button>
-              </div>
-            </>
-          )}
+              <>
+                <div>
+                  <button onClick={signUpNow}>Sign Up</button>
+                </div>
+                <div>
+                  <button onClick={handleLogIn}>Login</button>
+                </div>
+              </>
+            )}
         </div>
       </>
     </ThemeProvider>

@@ -4,7 +4,7 @@ import Links from "../navigation/Links";
 import "./Profile.css";
 
 const Profile = ({ onFormSubmit }) => {
-  const [setPicture] = useState(null);
+  const [picture, setPicture] = useState(null);
   const [imgData, setImgData] = useState(null);
   const [enabled, setEnabled] = useState(false);
   const [tribeName, SetTribeName] = useState("");
@@ -59,10 +59,10 @@ const Profile = ({ onFormSubmit }) => {
             Submit
           </button>
         ) : (
-          <button className="tribeSubmit" disabled type="submit">
-            Submit
-          </button>
-        )}
+            <button className="tribeSubmit" disabled type="submit">
+              Submit
+            </button>
+          )}
       </form>
     </>
   );
