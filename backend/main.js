@@ -7,6 +7,7 @@ import { userModel } from "./UserSchema";
 import { dinoSchema } from "./dinoSchema";
 import dotenv from "dotenv";
 import mongodb, { Db } from "mongodb";
+import { diskUploader } from './upload'
 
 dotenv.config();
 
@@ -75,7 +76,7 @@ app.post("/library/", async (req, res) => {
     });
 });
 
-app.delete("/library/:yourID", async (req, res) => {}); //working on
+app.delete("/library/:yourID", async (req, res) => { }); //working on
 
 // app.delete("/library/:user", (req, res) => {
 //   res.send("DELETE Request Called");
@@ -84,15 +85,14 @@ app.delete("/library/:yourID", async (req, res) => {}); //working on
 //You would need to find the user who has the dino with that id and just slice it off of the array.
 // });
 
-//app.get("/user", async (req, res) => {
-//store user's tribe name, username and photo
+// app.get("/user", async (req, res) => {
+// store user's tribe name, username and photo
 //userModel is what will be used here
 //});
 
-//app.post("/user", async (req, res) => {
-//show tribe name, username and photo in profile route
-//userModel is what will be used here
-//});
+app.post("/user", diskUploader.single("file"), (req, res, next) => {
+  res.send("Thanks for uploading the file")
+});
 
 app.get("*", (req, res) => {
   //Done
@@ -105,4 +105,4 @@ app.listen(4000, () => {
   //Done
   console.log("Express server is now running on port 4000");
 });
-export {};
+export { };
