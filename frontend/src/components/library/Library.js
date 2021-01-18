@@ -91,8 +91,8 @@ const Table = () => {
           <tr>{renderHeader()}</tr>
         </thead>
         <tbody>
-          {renderBody}
-          <>{dinos ? JSON.stringify(dinos) : null}</>
+          {renderBody()}
+          {/* <>{dinos ? JSON.stringify(dinos) : null}</> */}
         </tbody>
       </table>
     </>

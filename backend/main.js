@@ -50,10 +50,9 @@ app.get("/user", (req, res) => {
 });
 
 app.get("/library/:yourID", async (req, res) => {
-  const userDoc = await userModel.findOne({ id: req.params.yourID }); //Steps 1, 2, and 3?
-
-  const displayDino = userDoc.dinos; //Step 4?
-  res.json(displayDino); //Steps 5 and 6?
+  const userDoc = await userModel.findOne({ id: req.params.yourID });
+  const displayDino = userDoc.dinos;
+  res.json(displayDino);
 
   //Done//1.On the front end, our request needs to send the current user's id (useSelector again)
   //Done//2. get the id out of the request body like we did in post.
