@@ -7,8 +7,9 @@ import { userModel } from "./UserSchema";
 import { dinoSchema } from "./dinoSchema";
 import dotenv from "dotenv";
 import mongodb, { Db } from "mongodb";
-import { diskUploader } from './upload'
-
+// import fs from 'fs'
+import { uploader, uploadDirectory, getUploadedFiles, findUploadedFiles } from './upload'
+import { findUploadedFile } from "./utils";
 dotenv.config();
 
 const app = express();
@@ -18,6 +19,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use("/uploader", express.static(uploadDirectory));
 
 const { MongoClient } = require("mongodb").MongoClient;
 
@@ -48,10 +50,11 @@ app.get("/login/:email", async (req, res) => {
   res.send(doc.id);
 });
 
-app.get("/user", (req, res) => {
-  //Done
-  res.send("profile info page");
-});
+// app.get("/user", async (req, res) => {
+//   //Done
+//   const files = await getUploadedFiles()
+//   res.json(files);
+// });
 
 app.get("/library/:yourID", async (req, res) => {
   //Done
@@ -85,13 +88,29 @@ app.delete("/library/:yourID", async (req, res) => { }); //working on
 //You would need to find the user who has the dino with that id and just slice it off of the array.
 // });
 
-// app.get("/user", async (req, res) => {
-// store user's tribe name, username and photo
-//userModel is what will be used here
-//});
+app.get("/user", async (req, res) => {
+  try {
+    const files = await getUploadedFiles();
+    res.json(files.map((file) => `/uploader/${file}`));
+  } catch (err) {
+    res.status(500).json({ message: err.message })
 
-app.post("/user", diskUploader.single("file"), (req, res, next) => {
-  res.send("Thanks for uploading the file")
+  }
+});
+
+app.get("/user/:filename", async (req, res) => {
+  try {
+    const { birthtime, size } = await findUploadedFile(req.params.filename);
+    res.json({ birthtime, size });
+  } catch (err) {
+    res.status(404).json({ message: "unable to find file" })
+  }
+});
+
+app.post("/user", uploader.single("photo"), (req, res) => {
+  res.json({
+    file: req.file.path,
+  });
 });
 
 app.get("*", (req, res) => {
