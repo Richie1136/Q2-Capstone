@@ -29,6 +29,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/signup", (req, res) => {
+  //Done
   const myData = new userModel(req.body);
   myData
     .save()
@@ -41,28 +42,25 @@ app.post("/signup", (req, res) => {
 });
 
 app.get("/login/:email", async (req, res) => {
+  //Done
   const doc = await userModel.findOne({ email: req.params.email });
   res.send(doc.id);
 });
 
 app.get("/user", (req, res) => {
+  //Done
   res.send("profile info page");
 });
 
 app.get("/library/:yourID", async (req, res) => {
+  //Done
   const userDoc = await userModel.findOne({ id: req.params.yourID });
   const displayDino = userDoc.dinos;
   res.json(displayDino);
-
-  //Done//1.On the front end, our request needs to send the current user's id (useSelector again)
-  //Done//2. get the id out of the request body like we did in post.
-  //Done//3. find the user document with that id. Just like we did down in the post.
-  //4. get the array of dinos from that document.
-  //5. send it to the frontend
-  //6. display it on the frontend
 });
 
 app.post("/library/", async (req, res) => {
+  //Done
   const myData = new Dino(req.body.dinoData);
   console.log(req.body.userID);
   const userDoc = await userModel.findOne({ id: req.body.userID });
@@ -76,6 +74,8 @@ app.post("/library/", async (req, res) => {
       res.status(400).send("unable to save to database");
     });
 });
+
+app.delete("/library/:yourID", async (req, res) => {}); //working on
 
 // app.delete("/library/:user", (req, res) => {
 //   res.send("DELETE Request Called");
@@ -95,12 +95,14 @@ app.post("/library/", async (req, res) => {
 //});
 
 app.get("*", (req, res) => {
+  //Done
   res.status(404).json({
     message: "Sorry, Page not found!",
   });
 });
 
 app.listen(4000, () => {
+  //Done
   console.log("Express server is now running on port 4000");
 });
 export {};
