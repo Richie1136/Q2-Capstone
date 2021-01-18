@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import { dinoSchema } from "./dinoSchema";
 
+
 export const UserSchema = new mongoose.Schema({
   email: String,
   dinos: [dinoSchema],
