@@ -73,15 +73,12 @@ const Input = () => {
         <Card>
           <form onSubmit={handleSubmit}>
             <div className="ui-form">
+              <Card.Title>
+                <h1>Enter stats</h1>
+              </Card.Title>
               <div className="fields">
-                <br></br>
-                <Card.Title>
-                  <h3>Enter stats</h3>
-                </Card.Title>
-                <br></br>
                 <Form.Group controlId="CreatureType">
                   <Form.Label>Creature</Form.Label>
-                  <br />
                   <Form.Control onChange={(e) => setCreatureType(e.target.value)} value={creatureType} as="select">
                     <option>Choose...</option>
                     <option value="Giganotosaurus">Giganotosaurus</option>

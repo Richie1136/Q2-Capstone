@@ -59,21 +59,26 @@ export default function App() {
         <div className="App">
           <Toggle theme={theme} toggleTheme={themeToggler} /> <Navigation />
           {auth.loggedIn ? (
-            <div>
+            <div className="loginStatus">
               You are logged-in.
-              <br />
-              <button onClick={() => auth.logout()}>Logout</button>
+              <button className="logout" onClick={() => auth.logout()}>
+                Logout
+              </button>
             </div>
           ) : (
-              <>
-                <div>
-                  <button onClick={signUpNow}>Sign Up</button>
-                </div>
-                <div>
-                  <button onClick={handleLogIn}>Login</button>
-                </div>
-              </>
-            )}
+            <>
+              <div>
+                <button className="signup" onClick={signUpNow}>
+                  Sign Up
+                </button>
+              </div>
+              <div>
+                <button className="login" onClick={handleLogIn}>
+                  Login
+                </button>
+              </div>
+            </>
+          )}
         </div>
       </>
     </ThemeProvider>

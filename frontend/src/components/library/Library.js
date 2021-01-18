@@ -75,7 +75,9 @@ const Table = () => {
               <td>{movementSpeed}</td>
               <td>{torpidity}</td>
               <td>{imprinting}</td>
-              <td className="remove"></td>
+              <td className="remove">
+                <button id="button">Delete</button>
+              </td>
             </tr>
           );
         },
@@ -90,10 +92,7 @@ const Table = () => {
         <thead>
           <tr>{renderHeader()}</tr>
         </thead>
-        <tbody>
-          {renderBody()}
-          {/* <>{dinos ? JSON.stringify(dinos) : null}</> */}
-        </tbody>
+        <tbody>{renderBody()}</tbody>
       </table>
     </>
   );
