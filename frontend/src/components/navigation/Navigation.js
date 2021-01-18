@@ -7,7 +7,6 @@ import NotFound from "../../screens/NotFound";
 import Input from "../Input";
 import Profile from "../../components/profile/Profile";
 import Library from "../library/Library";
-import Extractor from "../extractor/Extractor";
 import Settings from "../../components/profile/settings/Settings";
 import "./Navigation.css";
 import DinoCard from "../dinocard/DinoCard";
@@ -20,7 +19,6 @@ export default function Navigation() {
       <ConnectedRoute exact path="/user" component={Profile} />
       <ConnectedRoute path="/input" component={Input} />
       <ConnectedRoute path="/library" component={Library} />
-      <ConnectedRoute exact path="/extractor" component={Extractor} />
       <ConnectedRoute path="/dinocard" component={DinoCard} />
       <ConnectedRoute exact path="/user/settings" component={Settings} />
       <ConnectedRoute path="*" component={NotFound} />

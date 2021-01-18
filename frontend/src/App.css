@@ -12,6 +12,7 @@ html[data-theme="dark"] {
 
 .App {
   text-align: center;
+  justify-content: center;
 }
 
 .App-logo {
@@ -29,4 +30,34 @@ html[data-theme="dark"] {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: var(--primary-color);
+}
+
+.signup {
+  display: block;
+  margin: auto;
+  padding: 5px;
+  justify-content: center;
+}
+
+.login {
+  display: flex;
+  margin: auto;
+  margin-top: 5px;
+  justify-content: center;
+}
+
+.logout {
+  display: flex;
+  margin: auto;
+  margin-top: 2px;
+  padding: 3px;
+  justify-content: center;
+}
+
+.loginStatus {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  margin-top: 3px;
 }
