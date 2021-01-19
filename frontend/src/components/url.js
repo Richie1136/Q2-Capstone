@@ -8,11 +8,16 @@ const axiosInstance = axios.create({
 
 export default axiosInstance;
 export const fetchPics = async () => {
-  const { data } = await axiosInstance.get("/user")
+  const { data } = await axiosInstance.get("/user", {
+    params: {
+      size: 500000
+    },
+  })
   return data;
 };
 
 export const uploadPic = async data => {
-  console.log({ data })
-  throw new Error("oops")
-}
+  const formData = new FormData();
+  formData.append("file", data)
+  await axiosInstance.post("/user", formData)
+};

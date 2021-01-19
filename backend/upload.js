@@ -41,6 +41,7 @@ export const getUploadedFiles = async () => {
 
 export const findUploadedFiles = async (fileName) => {
   const info = await fs.stat(path.resolve(uploadDirectory, fileName));
+  return info;
 };
 
 
