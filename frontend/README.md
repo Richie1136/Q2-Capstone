@@ -48,4 +48,4 @@ group members on what was completed, what is next to do, what roadblocks appeare
 
 Masud Rana:
 
-Richie Hagenah:
+Richie Hagenah: I worked on the Profile Component along with some of the CSS on different components and fixed the navigation links so that they looked much better and not all over the place when you went to different links on the application. Early on in the capstone i started the Input component and got everything laid out before Jen and Crystal finished that component
