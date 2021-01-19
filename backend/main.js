@@ -79,7 +79,7 @@ app.post("/library/", async (req, res) => {
     });
 });
 
-app.delete("/library/:yourID", async (req, res) => {}); //working on
+app.delete("/library/:yourID", async (req, res) => { }); //working on
 
 // app.delete("/library/:user", (req, res) => {
 //   res.send("DELETE Request Called");
@@ -91,7 +91,7 @@ app.delete("/library/:yourID", async (req, res) => {}); //working on
 app.get("/user", async (req, res) => {
   try {
     const files = await getUploadedFiles();
-    const fileData = files.map((file) => path.join(".", uploadDirectory, file));
+    const fileData = files.map((file) => `/uploader/${file}`);
     res.json(fileData)
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -125,12 +125,6 @@ app.get("/user-hard-mode", async (req, res) => {
       }
     });
     res.json(photos);
-    // for (let file of files) {
-    //   const result = await findUploadedFile(file)
-    //   if (result.size <= size) {
-    //     results.push(file)
-    //   }
-
     res.json(result);
   } catch {
     res.status(500).json({ message: err.message });
@@ -153,4 +147,4 @@ app.listen(4000, () => {
   //Done
   console.log("Express server is now running on port 4000");
 });
-export {};
+export { };

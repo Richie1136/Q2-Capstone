@@ -7,11 +7,20 @@ import { fetchPics, URL_BASE_URL, uploadPic } from '../url'
 const Profile = ({ onFormSubmit }) => {
   const [photos, setPhotos] = useState([]);
   const [imgData, setImgData] = useState(null);
-  const [enabled, setEnabled] = useState(false);
   const [tribeName, SetTribeName] = useState("");
   const [selectedFile, setSelectedFile] = useState(null)
   const [uploadStatus, setUploadStatus] = useState(null)
   const [fetchStatusError, setFetchStatusError] = useState(null)
+
+  const onInputChange = (event) => {
+    SetTribeName(event.value.target)
+  }
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    // onFormSubmit(tribeName)
+  }
+
 
   useEffect(() => {
     async function getPhotos() {
@@ -32,7 +41,7 @@ const Profile = ({ onFormSubmit }) => {
 
   const submitForm = async (event) => {
     try {
-      event.preventDefault();
+      // event.preventDefault();
       await uploadPic(selectedFile);
       setUploadStatus("success");
     } catch {
@@ -52,7 +61,7 @@ const Profile = ({ onFormSubmit }) => {
     <>
       <Links />
       <Link to="/user/settings">Settings</Link>
-      <div className="image upload">
+      <div className="image upload" z>
         {fetchStatusError && <p>{fetchStatusError} </p>}
         {uploadStatus && <p>{uploadStatus}</p>}
         <form onSubmit={submitForm}>
@@ -66,18 +75,14 @@ const Profile = ({ onFormSubmit }) => {
 
       <br />
       <h3 className="Tribe">Enter Tribe Name</h3>
-      <div onSubmit={onFormSubmit}>
-        <input type="text" value={tribeName} onChange={(event) => SetTribeName(event.target.value)} />
-      </div>
-      {enabled ? (
-        <button className="submit" type="submit">
-          Submit
-        </button>
-      ) : (
-          <button className="tribeSubmit" disabled type="submit">
-            Submit
-          </button>
-        )}
+      <form onSubmit={onFormSubmit}>
+        <input type="text"
+          value={tribeName}
+          onChange={(event) => SetTribeName(event.target.value)}
+        />
+        <button type="submit">Submit</button>
+      </form>
+
     </>
   );
 };
