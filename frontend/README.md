@@ -25,10 +25,10 @@ better). Also please choose ONE of the staff below that was your investor and re
 | Name           | Scrum Role         | I worked on    |
 | -------------- | ------------------ | -------------- |
 | Zach           | `Product Investor` | Investing      |
-| Crystal Mackey | `Product Owner`    | Fill me out... |
-| Jen McDonnell  | `Scrum Master`     | Fill me out... |
-| Masud Rana     | `Dev`              | Fill me out... |
-| Richie Hagenah | `Dev`              | Fill me out... |
+| Crystal Mackey | `Product Owner`    | See below..... |
+| Jen McDonnell  | `Scrum Master`     | See below..... |
+| Masud Rana     | `Dev`              | See below..... |
+| Richie Hagenah | `Dev`              | See below..... |
 
 I worked on...............
 
@@ -46,7 +46,7 @@ backend dependencies, we made sure to add everything installed to our trello boa
 members. This capstone overall taught me how to approach important tasks with efficiency and to always communicate with
 group members on what was completed, what is next to do, what roadblocks appeared and what was proven successful.
 
-Masud Rana:
+Masud Rana: Assited with profile component and setting up settings route. Attempted to do verification/log in.
 
 Richie Hagenah: I worked on the profile component along with some of the CSS and fixed the navigation links so that they
 looked much better and not all over the place when you went to different links on the application
