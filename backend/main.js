@@ -7,14 +7,13 @@ import { userModel } from "./UserSchema";
 import { dinoSchema } from "./dinoSchema";
 import dotenv from "dotenv";
 import mongodb, { Db } from "mongodb";
-// import fs from 'fs'
-import { uploader, uploadDirectory, getUploadedFiles, findUploadedFiles } from './upload'
+import { uploader, uploadDirectory, getUploadedFiles, findUploadedFiles } from "./upload";
 import { findUploadedFile } from "./utils";
 import path from 'path'
 dotenv.config();
 
 const app = express();
-const port = process.env.port || 4000;
+const port = process.env.PORT || 4000;
 
 app.use(cors());
 app.use(express.json());
@@ -80,7 +79,7 @@ app.post("/library/", async (req, res) => {
     });
 });
 
-app.delete("/library/:yourID", async (req, res) => { }); //working on
+app.delete("/library/:yourID", async (req, res) => {}); //working on
 
 // app.delete("/library/:user", (req, res) => {
 //   res.send("DELETE Request Called");
@@ -95,7 +94,7 @@ app.get("/user", async (req, res) => {
     const fileData = files.map((file) => path.join(".", uploadDirectory, file));
     res.json(fileData)
   } catch (err) {
-    res.status(500).json({ message: err.message })
+    res.status(500).json({ message: err.message });
   }
 });
 
@@ -104,7 +103,7 @@ app.get("/user/:filename", async (req, res) => {
     const { birthtime, size } = await findUploadedFile(req.params.filename);
     res.json({ birthtime, size });
   } catch (err) {
-    res.status(404).json({ message: "unable to find file" })
+    res.status(404).json({ message: "unable to find file" });
   }
 });
 
@@ -154,4 +153,4 @@ app.listen(4000, () => {
   //Done
   console.log("Express server is now running on port 4000");
 });
-export { };
+export {};
