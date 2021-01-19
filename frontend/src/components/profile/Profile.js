@@ -11,7 +11,7 @@ const Profile = ({ onFormSubmit }) => {
   const [tribeName, SetTribeName] = useState("");
   const [selectedFile, setSelectedFile] = useState(null)
   const [uploadStatus, setUploadStatus] = useState(null)
-
+  const [fetchStatusError, setFetchStatusError] = useState(null)
 
   useEffect(() => {
     async function getPhotos() {
@@ -20,6 +20,15 @@ const Profile = ({ onFormSubmit }) => {
 
     getPhotos();
   }, []);
+
+  const refetchPhotos = async () => {
+    try {
+      setFetchStatusError(null);
+      setPhotos(await fetchPics());
+    } catch {
+      setFetchStatusError("unable to fetch photos")
+    }
+  };
 
   const submitForm = async (event) => {
     try {
@@ -43,27 +52,18 @@ const Profile = ({ onFormSubmit }) => {
     <>
       <Links />
       <Link to="/user/settings">Settings</Link>
-      {uploadStatus && <p>{uploadStatus}</p>}
-      <form onSubmit={submitForm}>
-        <input type="file" name="photo" onChange={onselectFile} />
-        <button type="submit">Submit</button>
-      </form>
       <div className="image upload">
-        <h3 className="avatar">Avatar</h3>
+        {fetchStatusError && <p>{fetchStatusError} </p>}
+        {uploadStatus && <p>{uploadStatus}</p>}
+        <form onSubmit={submitForm}>
+          <input type="file" name="photo" onChange={onselectFile} />
+          <button type="submit">Submit</button>
+        </form>
         {photos.map((pic) => (
           <img key={pic} src={`${URL_BASE_URL}${pic}`} alt={pic} height="180px" width="180px" />
         ))}
       </div>
-      <img className="profilePic" src={imgData} alt="" height="180px" width="180px" />
-      <input
-        className="imagesUpload"
-        type="file"
-        accept=".jpg, .jpeg, .pdf, .png, .svg"
-      />
-      <button className="uploadSubmit" type="submit">
-        Upload
-          </button>
-      <div className="previewProfilePic"></div>
+
       <br />
       <h3 className="Tribe">Enter Tribe Name</h3>
       <div onSubmit={onFormSubmit}>

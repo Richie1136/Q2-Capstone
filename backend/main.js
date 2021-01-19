@@ -10,6 +10,7 @@ import mongodb, { Db } from "mongodb";
 // import fs from 'fs'
 import { uploader, uploadDirectory, getUploadedFiles, findUploadedFiles } from './upload'
 import { findUploadedFile } from "./utils";
+import path from 'path'
 dotenv.config();
 
 const app = express();
@@ -91,10 +92,10 @@ app.delete("/library/:yourID", async (req, res) => { }); //working on
 app.get("/user", async (req, res) => {
   try {
     const files = await getUploadedFiles();
-    res.json(files.map((file) => `/uploader/${file}`));
+    const fileData = files.map((file) => path.join(".", uploadDirectory, file));
+    res.json(fileData)
   } catch (err) {
     res.status(500).json({ message: err.message })
-
   }
 });
 
@@ -107,7 +108,36 @@ app.get("/user/:filename", async (req, res) => {
   }
 });
 
-app.post("/user", uploader.single("photo"), (req, res) => {
+app.get("/user-hard-mode", async (req, res) => {
+  try {
+    const files = await getUploadedFiles();
+    const fileData = files.map((file) => path.join(".", uploadDirectory, file));
+    if (req.query.size) {
+      res.json(fileData);
+      return;
+    }
+    const size = Number.parseInt(req.query.size, 10);
+    const promises = files.map(file => findUploadedFile(file))
+    const results = await Promise.all(promises);
+    const photos = [];
+    results.forEach((data, i) => {
+      if (data.size <= size) {
+        photos.push(data[i]);
+      }
+    });
+    res.json(photos);
+    // for (let file of files) {
+    //   const result = await findUploadedFile(file)
+    //   if (result.size <= size) {
+    //     results.push(file)
+    //   }
+
+    res.json(result);
+  } catch {
+    res.status(500).json({ message: err.message });
+  }
+});
+app.post("/user", uploader.single("file"), (req, res) => {
   res.json({
     file: req.file.path,
   });
