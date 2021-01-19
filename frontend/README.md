@@ -48,4 +48,5 @@ group members on what was completed, what is next to do, what roadblocks appeare
 
 Masud Rana:
 
-Richie Hagenah:
+Richie Hagenah: I worked on the profile component along with some of the CSS and fixed the navigation links so that they
+looked much better and not all over the place when you went to different links on the application
