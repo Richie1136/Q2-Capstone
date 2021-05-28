@@ -17,27 +17,7 @@ export const uploadTolibrary = async () => {
 export const libraryStorage = () => {
   fetch("");
 };
-<<<<<<< HEAD
 
-// export const uploadTolibrary = async () => {
-//   const { data } = await axios.get(`${url}/library`, {});
-
-// };
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
->>>>>>> fe4858d... Organized file structure and cleared up errors in console
-=======
->>>>>>> d4561de... Fixed merge conflict on my end
->>>>>>> 5be2563... Was behind in commits
->>>>>>> 6d62491... Fixing merge conflict issue
-=======
-
->>>>>>> 629723c... Update api.js
-=======
->>>>>>> master
 // const axiosInstance = axios.create({
 //   baseURL: api_baseURL,
 // });
